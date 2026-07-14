@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { HomeClient } from '@/components/home-client';
+import { faqs, howItWorksSteps } from '@/lib/site-content';
 
 export const metadata: Metadata = {
-  title: 'Swiftgigs — Get Everyday Tasks Done via WhatsApp | Nigeria',
+  title: 'Swiftgigs — On-Demand Local Help via WhatsApp | Nigeria',
   description:
-    'Connect with verified local workers for cleaning, errands, deliveries & more in Nigeria. No app needed — just WhatsApp. Instant. Trusted. Affordable.',
+    'Swiftgigs is Nigeria’s WhatsApp-based platform for on-demand local help, available nationwide. Message us for cleaning, errands, deliveries & repairs — get matched with a vetted worker in minutes. No app needed.',
   keywords: [
     'on-demand tasks Nigeria',
     'task marketplace Lagos',
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Swiftgigs' }],
   creator: 'Swiftgigs',
   openGraph: {
-    title: 'Swiftgigs — Get Everyday Tasks Done via WhatsApp',
+    title: 'Swiftgigs — On-Demand Local Help via WhatsApp',
     description:
       'Connect with verified local workers for cleaning, errands, deliveries & more in Nigeria. No app needed — just WhatsApp.',
     type: 'website',
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 };
 
-const jsonLd = {
+const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Swiftgigs',
@@ -67,6 +68,32 @@ const jsonLd = {
   },
 };
 
+// Answer Engine Optimization: FAQPage + HowTo schema give AI answer engines
+// (Google AI Overviews, ChatGPT, Perplexity) structured, quotable answers
+// that mirror exactly what's rendered in the FAQ and How It Works sections.
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to get local help through Swiftgigs',
+  description: 'Book a vetted local worker in Nigeria using only WhatsApp.',
+  step: howItWorksSteps.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.title,
+    text: s.desc,
+  })),
+};
+
 export default function HomePage() {
   return (
     <>
@@ -74,7 +101,17 @@ export default function HomePage() {
       <Script
         id="schema-org-home"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <Script
+        id="schema-faq-home"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <Script
+        id="schema-howto-home"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
       />
     </>
   );

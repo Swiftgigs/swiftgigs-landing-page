@@ -1,19 +1,22 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import { ThemeProvider } from '@/components/theme-provider'
+import type { Metadata, Viewport } from 'next'
+import { Geist, Bricolage_Grotesque } from 'next/font/google'
 import Script from 'next/script'
+import { CookieConsent, ConsentAnalytics } from '@/components/cookie-consent'
 import './globals.css'
 
 const _geist = Geist({ subsets: ['latin'] });
-const _geistMono = Geist_Mono({ subsets: ['latin'] });
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  variable: '--font-bricolage',
+  weight: ['500', '600', '700'],
+});
+
+export const viewport: Viewport = {
+  themeColor: '#8657a2',
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://swiftgigs.com.ng'),
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#8657a2' },
-    { media: '(prefers-color-scheme: dark)', color: '#8B70D4' },
-  ],
   title: {
     default: 'Swiftgigs — On-Demand Tasks via WhatsApp | Nigeria',
     template: '%s | Swiftgigs',
@@ -76,12 +79,11 @@ const websiteJsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="bg-background scroll-smooth" suppressHydrationWarning>
-      <body className="font-sans antialiased">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
-          {process.env.NODE_ENV === 'production' && <Analytics />}
-        </ThemeProvider>
+    <html lang="en" className="bg-background scroll-smooth">
+      <body className={`${bricolage.variable} font-sans antialiased`}>
+        {children}
+        <CookieConsent />
+        <ConsentAnalytics />
         <Script
           id="schema-website"
           type="application/ld+json"

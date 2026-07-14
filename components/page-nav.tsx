@@ -2,8 +2,12 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
-import { ThemeToggle } from '@/components/theme-toggle';
+import { WhatsAppIcon } from '@/components/whatsapp-icon';
+import { Button } from '@/components/ui/button';
+
+const WHATSAPP_LINK = 'https://wa.me/1234567890?text=Hi%20Swiftgigs';
 
 export function PageNav({
   backHref = '/',
@@ -12,42 +16,103 @@ export function PageNav({
   backHref?: string;
   backLabel?: string;
 }) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-2xl border-b border-border/50 shadow-sm">
-      <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-        <Link
-          href={backHref}
-          className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group shrink-0"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
-          {backLabel}
-        </Link>
-        <Link href="/" className="flex items-center shrink-0">
-          <Image
-            src="/logo-icon.png"
-            alt="Swiftgigs"
-            width={120}
-            height={120}
-            className="h-10 w-10 object-contain"
-          />
-          <span className="-ml-2 text-xl font-black tracking-tight text-primary leading-none">wiftgigs</span>
-        </Link>
-        <ThemeToggle />
-      </div>
-    </nav>
+    <div className="sticky top-0 z-50 px-3 sm:px-4 pt-2.5 sm:pt-3.5">
+      <nav
+        className={`relative max-w-5xl mx-auto rounded-full border backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300 ${
+          scrolled
+            ? 'bg-background/92 border-border shadow-[0_14px_44px_-18px_rgba(32,22,48,0.35)]'
+            : 'bg-background/65 border-border/60'
+        }`}
+      >
+        <div className="pl-3.5 pr-2 sm:pl-4 sm:pr-2.5 h-14 flex items-center justify-between gap-3">
+          <Link href="/" className="flex items-center shrink-0">
+            <Image src="/logo-icon.png" alt="Swiftgigs logo" width={200} height={200}
+              className="nav-logo-icon h-10 w-10 object-contain" priority />
+            <span className="nav-logo-text -ml-2.5 text-[20px] font-display font-bold tracking-tight leading-none">wiftgigs</span>
+          </Link>
+
+          <Link
+            href={backHref}
+            className="hidden sm:inline-flex items-center gap-1.5 text-[13.5px] font-medium text-foreground/60 hover:text-foreground rounded-full px-4 py-2 hover:bg-muted transition-colors group absolute left-1/2 -translate-x-1/2"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
+            {backLabel}
+          </Link>
+
+          <div className="flex items-center gap-1.5">
+            <Link
+              href={backHref}
+              aria-label={backLabel}
+              className="sm:hidden rounded-full p-2.5 border border-border/70 hover:bg-muted transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </Link>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+              <Button size="sm" className="bg-primary hover:bg-primary/90 text-white rounded-full px-4 sm:px-5 font-semibold h-9">
+                <WhatsAppIcon className="w-3.5 h-3.5 sm:mr-1" />
+                <span className="hidden sm:inline">Request a service</span>
+              </Button>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
   );
 }
 
 export function PageFooter() {
   return (
-    <footer className="bg-zinc-950 text-white py-8 px-4 mt-auto">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-        <span className="font-black text-lg text-primary">Swiftgigs</span>
-        <p className="text-white/50">© 2025 Swiftgigs. All rights reserved.</p>
-        <div className="flex gap-6 text-white/60">
-          <Link href="/terms" className="hover:text-white transition">Terms</Link>
-          <Link href="/privacy" className="hover:text-white transition">Privacy</Link>
-          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Contact</a>
+    <footer className="bg-ink text-white pt-14 pb-8 px-4 mt-auto">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-x-6 gap-y-10 md:gap-10 mb-12">
+          <div className="col-span-2 md:col-span-1">
+            <p className="font-display font-bold text-xl mb-3">Swiftgigs</p>
+            <p className="text-sm text-white/50 leading-relaxed max-w-[16rem] mb-6">
+              Vetted local help for everyday tasks — all on WhatsApp. Available across Nigeria.
+            </p>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white/[0.07] hover:bg-white/[0.12] border border-white/10 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors">
+              <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+              Chat with us
+            </a>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4 text-white/40 text-[13px] uppercase tracking-wider">Company</h4>
+            <ul className="space-y-3 text-[15px] text-white/65">
+              {[['About', '/about'], ['Blog', '/blog'], ['Careers', '/careers']].map(([l, h]) => (
+                <li key={l}><Link href={h} className="hover:text-white transition">{l}</Link></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4 text-white/40 text-[13px] uppercase tracking-wider">Legal</h4>
+            <ul className="space-y-3 text-[15px] text-white/65">
+              <li><Link href="/terms" className="hover:text-white transition">Terms &amp; Conditions</Link></li>
+              <li><Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link></li>
+            </ul>
+          </div>
+          <div className="col-span-2 sm:col-span-1 md:col-span-1">
+            <h4 className="font-semibold mb-4 text-white/40 text-[13px] uppercase tracking-wider">Contact</h4>
+            <ul className="space-y-3 text-[15px] text-white/65">
+              <li><a href="https://wa.me/1234567890" className="hover:text-white transition">WhatsApp</a></li>
+              <li><a href="mailto:support@swiftgigs.com" className="hover:text-white transition">Email</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[13px] text-white/35">
+          <p>&copy; 2026 Swiftgigs Technologies LTD. All rights reserved.</p>
+          <p>Built for Nigeria 🇳🇬</p>
         </div>
       </div>
     </footer>

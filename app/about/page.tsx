@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { PageNav, PageFooter } from '@/components/page-nav';
 import { AnimateIn } from '@/components/animate-in';
-import { MessageCircle, Zap, Shield, Heart, Users, CheckCircle } from 'lucide-react';
+import { Zap, Shield, Heart, Users, CheckCircle } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -45,19 +46,18 @@ const differentiators = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-clip">
       <PageNav />
 
       {/* Hero */}
-      <section className="py-12 md:py-24 px-4 border-b border-border/50 bg-card/20 relative overflow-hidden">
-        <div className="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+      <section className="py-12 md:py-24 px-4 border-b border-border bg-muted/40">
         <div className="max-w-4xl mx-auto text-center relative">
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <span className="inline-block text-xs font-bold text-primary bg-primary/10 rounded-full px-3 py-1 mb-6 uppercase tracking-wider">
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-primary mb-6">
               Our Story
             </span>
           </div>
-          <h1 className="animate-in fade-in slide-in-from-bottom-6 duration-700 text-3xl sm:text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
+          <h1 className="animate-in fade-in slide-in-from-bottom-6 duration-700 text-3xl sm:text-4xl md:text-6xl font-display font-bold tracking-tight mb-6 leading-tight">
             Building Nigeria&apos;s Most{' '}
             <span className="text-primary">Trusted</span> Task Platform
           </h1>
@@ -69,11 +69,11 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-10 px-4 border-b border-border/50">
+      <section className="py-10 px-4 border-b border-border">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, i) => (
             <AnimateIn key={stat.label} variant="zoom-in" delay={i * 80} className="text-center">
-              <p className="text-3xl md:text-4xl font-black text-primary mb-1">{stat.value}</p>
+              <p className="text-3xl md:text-4xl font-display font-bold text-primary mb-1">{stat.value}</p>
               <p className="text-sm text-muted-foreground">{stat.label}</p>
             </AnimateIn>
           ))}
@@ -84,10 +84,10 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 px-4">
         <div className="max-w-3xl mx-auto">
           <AnimateIn variant="fade-up">
-            <span className="inline-block text-xs font-bold text-primary bg-primary/10 rounded-full px-3 py-1 mb-5 uppercase tracking-wider">
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-primary mb-5">
               How It Started
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mb-8">It started with a simple observation</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-8">It started with a simple observation</h2>
           </AnimateIn>
           <div className="space-y-5 text-muted-foreground leading-relaxed text-lg">
             {[
@@ -105,10 +105,10 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 md:py-20 px-4 bg-card/30 border-y border-border/50">
+      <section className="py-16 md:py-20 px-4 bg-muted/40 border-y border-border">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
           {[
-            { icon: MessageCircle, badge: 'Our Mission', title: 'Make everyday help instantly accessible to every Nigerian', desc: 'We exist to eliminate the friction between needing help and getting it — while creating meaningful income opportunities for skilled workers in our communities.' },
+            { icon: WhatsAppIcon, badge: 'Our Mission', title: 'Make everyday help instantly accessible to every Nigerian', desc: 'We exist to eliminate the friction between needing help and getting it — while creating meaningful income opportunities for skilled workers in our communities.' },
             { icon: Users,         badge: 'Our Vision',  title: 'The operating system for local services in Africa', desc: 'We see a future where anyone in any African city can get reliable, affordable help for any task within minutes — through a platform that empowers both sides of the market.' },
           ].map((card, i) => {
             const Icon = card.icon;
@@ -132,15 +132,15 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 px-4">
         <div className="max-w-4xl mx-auto">
           <AnimateIn variant="fade-up" className="text-center mb-12">
-            <span className="inline-block text-xs font-bold text-primary bg-primary/10 rounded-full px-3 py-1 mb-4 uppercase tracking-wider">What We Stand For</span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black">Our Core Values</h2>
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">What We Stand For</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Our Core Values</h2>
           </AnimateIn>
           <div className="grid md:grid-cols-3 gap-6">
             {values.map((v, i) => {
               const Icon = v.icon;
               return (
                 <AnimateIn key={v.title} variant="zoom-in" delay={i * 100}>
-                  <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-md transition h-full">
+                  <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/40 transition h-full">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 mb-4">
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
@@ -155,11 +155,11 @@ export default function AboutPage() {
       </section>
 
       {/* How We're Different */}
-      <section className="py-16 md:py-20 px-4 bg-card/30 border-y border-border/50">
+      <section className="py-16 md:py-20 px-4 bg-muted/40 border-y border-border">
         <div className="max-w-4xl mx-auto">
           <AnimateIn variant="fade-up" className="text-center mb-10">
-            <span className="inline-block text-xs font-bold text-primary bg-primary/10 rounded-full px-3 py-1 mb-4 uppercase tracking-wider">Why Swiftgigs</span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black">Built Different</h2>
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">Why Swiftgigs</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Built Different</h2>
           </AnimateIn>
           <div className="grid sm:grid-cols-2 gap-4">
             {differentiators.map((point, i) => (
@@ -175,21 +175,21 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 px-4">
+      <section className="py-14 md:py-20 px-4">
         <AnimateIn variant="fade-up">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mb-5">Ready to Experience It?</h2>
-            <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+          <div className="final-cta-card max-w-5xl mx-auto rounded-[2rem] text-white px-6 py-14 md:py-20 text-center">
+            <h2 className="font-display font-bold text-3xl md:text-[2.6rem] leading-[1.08] tracking-[-0.01em] mb-5">Ready to experience it?</h2>
+            <p className="text-white/75 mb-9 text-lg leading-relaxed max-w-lg mx-auto">
               Join the hundreds of Nigerians who have already discovered how easy getting things done can be.
             </p>
             <a href="https://wa.me/1234567890?text=Hi%20Swiftgigs" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold rounded-full px-8 py-4 shadow-[0_10px_30px_rgba(98,72,220,0.35)] hover:-translate-y-0.5 transition-all duration-200">
-              <MessageCircle className="w-5 h-5" />
+              className="inline-flex items-center gap-2 bg-white text-primary hover:bg-white/90 font-bold rounded-full px-8 py-4 transition-colors">
+              <WhatsAppIcon className="w-5 h-5" />
               Start on WhatsApp
             </a>
-            <p className="text-sm text-muted-foreground mt-4">
+            <p className="text-sm text-white/60 mt-5">
               Or{' '}
-              <Link href="/careers" className="text-primary hover:underline">join our team</Link>
+              <Link href="/careers" className="text-white underline underline-offset-4 hover:text-white/80 transition-colors">join our team</Link>
               {' '}and help build something meaningful.
             </p>
           </div>

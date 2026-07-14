@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { PageNav, PageFooter } from '@/components/page-nav';
-import { Zap, Globe, Heart, BookOpen, TrendingUp, Users, ArrowRight, MessageCircle, Lightbulb, Rocket } from 'lucide-react';
+import { Zap, Globe, Heart, BookOpen, TrendingUp, Users, ArrowRight, Lightbulb, Rocket } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/whatsapp-icon';
 
 export const metadata: Metadata = {
   title: 'Careers at Swiftgigs — Join Our Remote Internship Team',
@@ -75,17 +76,16 @@ const roles = [
 
 export default function CareersPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-clip">
       <PageNav />
 
       {/* Hero */}
-      <section className="py-12 md:py-24 px-4 border-b border-border/50 bg-card/20 relative overflow-hidden">
-        <div className="pointer-events-none absolute -top-32 right-0 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
+      <section className="py-12 md:py-24 px-4 border-b border-border bg-muted/40">
         <div className="max-w-4xl mx-auto relative">
-          <span className="inline-block text-xs font-bold text-primary bg-primary/10 rounded-full px-3 py-1 mb-6 uppercase tracking-wider">
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-primary mb-6">
             Join the Team
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight max-w-3xl">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold tracking-tight mb-6 leading-tight max-w-3xl">
             We&apos;re Just Getting Started.{' '}
             <span className="text-primary">Want In?</span>
           </h1>
@@ -94,7 +94,7 @@ export default function CareersPage() {
             a small team moving fast and figuring things
             out as we go.
           </p>
-          {/* <div className="inline-flex items-center gap-2.5 bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-400 rounded-xl px-4 py-3 text-sm font-medium">
+          {/* <div className="inline-flex items-center gap-2.5 bg-amber-500/10 border border-amber-500/30 text-amber-700 rounded-xl px-4 py-3 text-sm font-medium">
             <Zap className="w-4 h-4 shrink-0" />
             These are unpaid internship roles. We can&apos;t pay salaries yet — but we can
             offer something rare: the chance to help build something from scratch.
@@ -105,10 +105,10 @@ export default function CareersPage() {
       {/* Honest pitch */}
       <section className="py-16 md:py-20 px-4">
         <div className="max-w-3xl mx-auto">
-          <span className="inline-block text-xs font-bold text-primary bg-primary/10 rounded-full px-3 py-1 mb-6 uppercase tracking-wider">
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-primary mb-6">
             The Honest Version
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mb-6">Here&apos;s the deal</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-6">Here&apos;s the deal</h2>
           <div className="space-y-5 text-muted-foreground leading-relaxed text-lg">
             <p>
               We won&apos;t pretend to be something we&apos;re not. We&apos;re a startup at
@@ -132,13 +132,13 @@ export default function CareersPage() {
       </section>
 
       {/* What you get */}
-      <section className="py-16 md:py-20 px-4 bg-card/30 border-y border-border/50">
+      <section className="py-16 md:py-20 px-4 bg-muted/40 border-y border-border">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <span className="inline-block text-xs font-bold text-primary bg-primary/10 rounded-full px-3 py-1 mb-4 uppercase tracking-wider">
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
               What You Get
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black">Not money. Something better.</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Not money. Something better.</h2>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
               We can&apos;t pay you — yet. But here&apos;s what working with us actually gives you.
             </p>
@@ -147,8 +147,8 @@ export default function CareersPage() {
             {whatYouGet.map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="bg-card border border-border rounded-2xl p-5 hover:border-primary/30 transition">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 mb-4">
+                <div key={item.title} className="bg-card border border-border rounded-2xl p-5 hover:border-primary/40 transition">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <Icon className="w-5 h-5 text-primary" />
                   </div>
                   <p className="font-bold mb-1.5">{item.title}</p>
@@ -164,15 +164,15 @@ export default function CareersPage() {
       <section className="py-16 md:py-24 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-block text-xs font-bold text-primary bg-primary/10 rounded-full px-3 py-1 mb-4 uppercase tracking-wider">
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-primary mb-4">
               Open Roles
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black">Where you can contribute</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Where you can contribute</h2>
             <p className="text-muted-foreground mt-3">All roles are remote internships. No experience required — only curiosity and drive.</p>
           </div>
           <div className="space-y-5">
             {roles.map((role) => (
-              <div key={role.title} className="bg-card border border-border rounded-2xl p-6 md:p-8 hover:border-primary/30 hover:shadow-md transition">
+              <div key={role.title} className="bg-card border border-border rounded-2xl p-6 md:p-8 hover:border-primary/40 transition">
                 <div className="flex flex-wrap items-start gap-3 mb-4">
                   <h3 className="text-xl font-bold flex-1">{role.title}</h3>
                   <div className="flex gap-2 flex-wrap">
@@ -206,20 +206,20 @@ export default function CareersPage() {
       </section>
 
       {/* Open application */}
-      <section className="py-10 px-4 bg-primary/5 border-y border-primary/20">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+      <section className="py-14 md:py-20 px-4">
+        <div className="final-cta-card max-w-5xl mx-auto rounded-[2rem] text-white px-6 sm:px-10 py-10 sm:py-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
-            <h3 className="text-lg sm:text-xl font-bold mb-1">Have a different skill?</h3>
-            <p className="text-muted-foreground text-sm max-w-lg">
+            <h3 className="font-display font-bold text-2xl mb-2">Have a different skill?</h3>
+            <p className="text-white/70 text-[15px] leading-relaxed max-w-lg">
               We&apos;re open-minded. If you have something to contribute and want to be part of
               building Swiftgigs, tell us who you are and what you&apos;d bring.
             </p>
           </div>
           <a
             href="mailto:support@swiftgigs.com.ng?subject=I want to contribute to Swiftgigs"
-            className="self-start sm:self-auto shrink-0 inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold rounded-full px-6 py-3 text-sm shadow-[0_4px_14px_rgba(98,72,220,0.3)] transition"
+            className="self-start sm:self-auto shrink-0 inline-flex items-center gap-2 bg-white text-primary hover:bg-white/90 font-bold rounded-full px-6 py-3 text-sm transition-colors"
           >
-            <MessageCircle className="w-4 h-4" />
+            <WhatsAppIcon className="w-4 h-4" />
             Reach Out
           </a>
         </div>

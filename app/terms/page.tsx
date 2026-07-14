@@ -14,15 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://swiftgigs.com.ng/terms' },
   robots: { index: true, follow: false },
 };
-import type { LucideIcon } from 'lucide-react';
-import {
-  CheckCircle, Shield, CreditCard, Ban, Scale, Mail, MessageCircle,
-  Users, Briefcase, Lock, FileText, AlertTriangle, RefreshCw, Globe, UserCheck,
-} from 'lucide-react';
+import { WhatsAppIcon } from '@/components/whatsapp-icon';
+import { CheckCircle, Shield, CreditCard, Ban, Scale, Mail, Users, Briefcase, Lock, FileText, AlertTriangle, RefreshCw, Globe, UserCheck } from 'lucide-react';
 
 type Section = {
   num: string;
-  icon: LucideIcon;
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
   body?: string;
   bullets?: string[];
@@ -35,7 +32,7 @@ const sections: Section[] = [
     body: 'By accessing or using Swiftgigs — whether through WhatsApp, this website, or any affiliated platform — you confirm that you have read, understood, and agree to be bound by these Terms & Conditions and our Privacy Policy. If you do not accept these terms, you may not use our services. These terms apply to all users of the platform including customers and workers.',
   },
   {
-    num: '02', icon: MessageCircle, title: 'Platform Description',
+    num: '02', icon: WhatsAppIcon, title: 'Platform Description',
     body: 'Swiftgigs is an on-demand task marketplace that connects customers ("Clients") with independent service providers ("Workers") for the completion of everyday tasks including errands, home cleaning, deliveries, beauty services, moving assistance, and personal help. Swiftgigs acts solely as a technology intermediary. We do not employ workers directly and we do not perform the services offered by workers on our platform.',
   },
   {
@@ -153,22 +150,22 @@ const tldr = [
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-clip">
       <PageNav />
 
       {/* Header */}
-      <div className="border-b border-border/50 bg-card/30">
-        <div className="max-w-4xl mx-auto px-4 py-10 md:py-16">
-          <span className="inline-block text-xs font-bold text-primary bg-primary/10 rounded-full px-3 py-1 mb-5 uppercase tracking-wider">
+      <div className="relative overflow-hidden border-b border-border bg-muted/40">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(120,90,150,0.1)_1px,transparent_0)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_90%_80%_at_50%_0%,black,transparent)]" aria-hidden />
+        <div className="pointer-events-none absolute -top-32 right-[-8%] h-80 w-80 rounded-full bg-primary/[0.09] blur-3xl" aria-hidden />
+        <div className="relative max-w-4xl mx-auto px-4 py-12 md:py-20">
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-primary mb-5">
             Legal Document
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">Terms & Conditions</h1>
-          <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
-            <span>Effective: January 2025</span>
-            <span className="hidden sm:inline">·</span>
-            <span>Last Updated: May 2026</span>
-            <span className="hidden sm:inline">·</span>
-            <span>Version 2.0</span>
+          <h1 className="text-3xl sm:text-4xl md:text-[3.2rem] font-display font-bold tracking-[-0.015em] leading-[1.08] mb-5">Terms & Conditions</h1>
+          <div className="flex flex-wrap gap-2 text-[12.5px] font-medium text-foreground/65">
+            <span className="rounded-full border border-border bg-card px-3.5 py-1.5">Effective: January 2025</span>
+                        <span className="rounded-full border border-border bg-card px-3.5 py-1.5">Last Updated: May 2026</span>
+                        <span className="rounded-full border border-border bg-card px-3.5 py-1.5">Version 2.0</span>
           </div>
         </div>
       </div>
@@ -177,8 +174,8 @@ export default function TermsPage() {
       <div className="flex-1 max-w-4xl mx-auto px-4 py-10 md:py-12 w-full">
 
         {/* TL;DR */}
-        <div className="bg-primary/5 border border-primary/20 rounded-2xl p-5 sm:p-6 mb-10 md:mb-12">
-          <p className="text-xs font-bold text-primary uppercase tracking-wider mb-4">Quick Summary</p>
+        <div className="relative overflow-hidden rounded-3xl border border-primary/10 bg-gradient-to-br from-card via-card to-secondary/55 p-6 sm:p-8 mb-10 md:mb-12 shadow-[0_28px_70px_-46px_rgba(72,42,94,0.55)]">
+          <p className="text-xs font-bold text-primary uppercase tracking-[0.18em] mb-5">Quick Summary</p>
           <div className="grid sm:grid-cols-2 gap-3">
             {tldr.map((point, i) => (
               <div key={i} className="flex gap-2.5 text-sm">
@@ -190,18 +187,18 @@ export default function TermsPage() {
         </div>
 
         {/* Sections */}
-        <div className="space-y-10">
+        <div className="space-y-4 sm:space-y-5">
           {sections.map((section) => {
             const Icon = section.icon;
             return (
-              <section key={section.num} className="scroll-mt-20">
+              <section key={section.num} className="scroll-mt-24 bg-card border border-border rounded-2xl p-5 sm:p-7 transition-colors hover:border-primary/25">
                 <div className="flex items-start gap-4 mb-3">
                   <div className="shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
                     <Icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <span className="text-xs font-semibold text-primary/60 uppercase tracking-wider">{section.num}</span>
-                    <h2 className="text-xl font-bold leading-snug">{section.title}</h2>
+                    <h2 className="font-display font-bold text-xl leading-snug">{section.title}</h2>
                   </div>
                 </div>
                 <div className="pl-0 sm:pl-14 mt-3 space-y-3">
@@ -224,9 +221,9 @@ export default function TermsPage() {
                         href="https://wa.me/1234567890"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 bg-card border border-border rounded-xl p-4 hover:border-primary/40 hover:shadow-sm transition group"
+                        className="flex items-center gap-3 bg-card border border-border rounded-xl p-4 hover:border-primary/40 transition group"
                       >
-                        <MessageCircle className="w-5 h-5 text-primary shrink-0" />
+                        <WhatsAppIcon className="w-5 h-5 text-primary shrink-0" />
                         <div>
                           <p className="text-sm font-semibold group-hover:text-primary transition">WhatsApp Support</p>
                           <p className="text-xs text-muted-foreground">Fastest response time</p>
@@ -234,7 +231,7 @@ export default function TermsPage() {
                       </a>
                       <a
                         href="mailto:legal@swiftgigs.com"
-                        className="flex items-center gap-3 bg-card border border-border rounded-xl p-4 hover:border-primary/40 hover:shadow-sm transition group"
+                        className="flex items-center gap-3 bg-card border border-border rounded-xl p-4 hover:border-primary/40 transition group"
                       >
                         <Mail className="w-5 h-5 text-primary shrink-0" />
                         <div>

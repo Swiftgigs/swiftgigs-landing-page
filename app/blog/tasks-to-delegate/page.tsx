@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { PageNav, PageFooter } from '@/components/page-nav';
 import { AnimateIn } from '@/components/animate-in';
-import { Clock, ArrowRight, MessageCircle } from 'lucide-react';
+import { Clock, ArrowRight } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/whatsapp-icon';
+import { PostBanner, PullQuote, StoryCard } from '@/components/blog-visuals';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -44,17 +46,17 @@ const tasks = [
 
 export default function BlogPost2() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-clip">
       <PageNav backHref="/blog" backLabel="Back to Blog" />
 
-      <div className="border-b border-border/50 bg-card/20">
+      <div className="border-b border-border bg-muted/40">
         <div className="max-w-3xl mx-auto px-4 py-12 md:py-16">
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <span className="inline-block text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-full px-3 py-1 mb-5 uppercase tracking-wider">
+            <span className="inline-block text-xs font-bold bg-emerald-500/10 text-emerald-700 rounded-full px-3 py-1 mb-5 uppercase tracking-wider">
               Productivity
             </span>
           </div>
-          <h1 className="animate-in fade-in slide-in-from-bottom-6 duration-700 text-3xl md:text-5xl font-black leading-tight mb-5">
+          <h1 className="animate-in fade-in slide-in-from-bottom-6 duration-700 text-3xl md:text-5xl font-display font-bold leading-tight mb-5">
             5 Everyday Tasks You Should Stop Doing Yourself
           </h1>
           <div className="animate-in fade-in duration-700 [animation-delay:200ms] flex items-center gap-4 text-sm text-muted-foreground">
@@ -68,6 +70,9 @@ export default function BlogPost2() {
       </div>
 
       <article className="flex-1 max-w-3xl mx-auto px-4 py-12 w-full">
+        <AnimateIn variant="fade-up">
+          <PostBanner variant="checklist" className="mb-10" />
+        </AnimateIn>
         <div className="space-y-6 text-[1.0625rem] leading-[1.75] text-foreground/90">
           <AnimateIn variant="fade-up">
             <p>
@@ -83,6 +88,12 @@ export default function BlogPost2() {
             </p>
           </AnimateIn>
           <AnimateIn variant="fade-up">
+            <PullQuote>
+              Stop counting the cost of getting help — start counting the cost of not getting it.
+            </PullQuote>
+          </AnimateIn>
+
+          <AnimateIn variant="fade-up">
             <p>Here are five tasks Swiftgigs customers love delegating — and why it makes sense.</p>
           </AnimateIn>
 
@@ -90,11 +101,11 @@ export default function BlogPost2() {
             {tasks.map((task, i) => (
               <AnimateIn key={task.num} variant="fade-up" delay={i * 80}>
                 <div className="flex gap-5">
-                  <div className="shrink-0 w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-xs font-black text-primary">
+                  <div className="shrink-0 w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-xs font-display font-bold text-primary">
                     {task.num}
                   </div>
                   <div>
-                    <h2 className="text-xl font-black mb-2">{task.title}</h2>
+                    <h2 className="text-xl font-display font-bold mb-2">{task.title}</h2>
                     <p className="text-muted-foreground leading-relaxed">{task.body}</p>
                   </div>
                 </div>
@@ -103,8 +114,18 @@ export default function BlogPost2() {
           </div>
 
           <AnimateIn variant="fade-up">
+            <StoryCard
+              name="Ibrahim S."
+              where="Lagos"
+              service="Errand Running"
+              quote="This is way easier than asking around for help. One message and it was handled."
+              detail="Bank run + courier pickup · Done in 2 hours"
+            />
+          </AnimateIn>
+
+          <AnimateIn variant="fade-up">
             <div className="bg-card border border-border rounded-2xl p-6 mt-10">
-              <h3 className="text-lg font-black mb-3">The Math Is Simple</h3>
+              <h3 className="text-lg font-display font-bold mb-3">The Math Is Simple</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 If your effective hourly rate is ₦5,000 per hour, and you spend 4 hours doing a task a Swiftgigs
                 worker could handle for ₦3,000, you&apos;ve effectively &quot;lost&quot; ₦17,000 in opportunity cost.
@@ -114,12 +135,12 @@ export default function BlogPost2() {
           </AnimateIn>
 
           <AnimateIn variant="zoom-in">
-            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 mt-6 text-center">
+            <div className="final-cta-card text-white rounded-3xl p-8 mt-6 text-center">
               <p className="text-lg font-bold mb-2">Start delegating today</p>
-              <p className="text-muted-foreground text-sm mb-5">Describe what you need — we&apos;ll find a verified helper near you in minutes.</p>
+              <p className="text-white/70 text-sm mb-5">Describe what you need — we&apos;ll find a verified helper near you in minutes.</p>
               <a href="https://wa.me/1234567890?text=Hi%20Swiftgigs" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold rounded-full px-6 py-3 text-sm shadow-[0_4px_14px_rgba(98,72,220,0.3)] transition hover:-translate-y-0.5">
-                <MessageCircle className="w-4 h-4" />
+                className="inline-flex items-center gap-2 bg-white text-primary hover:bg-white/90 font-bold rounded-full px-6 py-3 text-sm transition-colors">
+                <WhatsAppIcon className="w-4 h-4" />
                 Book a Task on WhatsApp
               </a>
             </div>
@@ -127,17 +148,17 @@ export default function BlogPost2() {
         </div>
       </article>
 
-      <section className="border-t border-border/50 py-10 px-4">
+      <section className="border-t border-border py-10 px-4">
         <div className="max-w-3xl mx-auto">
           <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-5">More from the Blog</p>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/blog/making-help-accessible-in-nigeria" className="group bg-card border border-border rounded-xl p-5 hover:border-primary/30 hover:shadow-sm transition flex flex-col gap-2">
+            <Link href="/blog/making-help-accessible-in-nigeria" className="group bg-card border border-border rounded-xl p-5 hover:border-primary/40 transition flex flex-col gap-2">
               <span className="text-xs font-bold bg-primary/10 text-primary rounded-full px-2.5 py-0.5 self-start">Company</span>
               <p className="font-semibold text-sm leading-snug group-hover:text-primary transition">How Swiftgigs Is Making Everyday Help More Accessible in Nigeria</p>
               <span className="text-xs text-muted-foreground flex items-center gap-1 mt-auto"><Clock className="w-3 h-3" /> 3 min read</span>
             </Link>
-            <Link href="/blog/getting-started-with-swiftgigs" className="group bg-card border border-border rounded-xl p-5 hover:border-primary/30 hover:shadow-sm transition flex flex-col gap-2">
-              <span className="text-xs font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-full px-2.5 py-0.5 self-start">Guide</span>
+            <Link href="/blog/getting-started-with-swiftgigs" className="group bg-card border border-border rounded-xl p-5 hover:border-primary/40 transition flex flex-col gap-2">
+              <span className="text-xs font-bold bg-sky-500/10 text-sky-700 rounded-full px-2.5 py-0.5 self-start">Guide</span>
               <p className="font-semibold text-sm leading-snug group-hover:text-primary transition">Your First Swiftgigs Experience: What to Expect</p>
               <span className="text-xs text-muted-foreground flex items-center gap-1 mt-auto"><Clock className="w-3 h-3" /> 2 min read</span>
             </Link>
