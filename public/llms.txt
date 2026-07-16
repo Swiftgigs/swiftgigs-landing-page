@@ -1,0 +1,28 @@
+# Swiftgigs
+
+> Swiftgigs is a WhatsApp-based platform that connects people across Nigeria with vetted local workers for everyday tasks — house cleaning, errands, deliveries, quick repairs, beauty services and moving help. There is no app to download: customers send one WhatsApp message, get matched with a verified nearby worker in minutes, and pay through an escrow that is only released when they confirm the job is done. Prices start from ₦1,000 and are negotiated with the provider through Swiftgigs before work begins.
+
+Swiftgigs is currently pre-launch: worker onboarding and customer requests open soon, and a public waitlist is live. Swiftgigs Technologies LTD is a CAC-registered Nigerian business.
+
+## Key pages
+
+- [Home](https://swiftgigs.com.ng/): what Swiftgigs is, how it works, trust and safety, FAQ
+- [Worker waitlist](https://swiftgigs.com.ng/waitlist): join with an email or WhatsApp number to be first when onboarding opens
+- [About](https://swiftgigs.com.ng/about): mission, story and values
+- [Blog](https://swiftgigs.com.ng/blog): guides and stories about local services in Nigeria
+
+## Articles
+
+- [How Swiftgigs Is Making Everyday Help More Accessible in Nigeria](https://swiftgigs.com.ng/blog/making-help-accessible-in-nigeria)
+- [5 Everyday Tasks You Should Stop Doing Yourself](https://swiftgigs.com.ng/blog/tasks-to-delegate)
+- [Your First Swiftgigs Experience: What to Expect](https://swiftgigs.com.ng/blog/getting-started-with-swiftgigs)
+
+## Policies
+
+- [Terms & Conditions](https://swiftgigs.com.ng/terms)
+- [Privacy Policy](https://swiftgigs.com.ng/privacy) (NDPR-compliant)
+
+## Contact
+
+- WhatsApp: https://wa.me/1234567890
+- Email: support@swiftgigs.com

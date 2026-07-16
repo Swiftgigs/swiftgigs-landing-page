@@ -48,6 +48,11 @@ const organizationJsonLd = {
     'On-demand task marketplace connecting customers with verified local workers via WhatsApp in Nigeria.',
   url: 'https://swiftgigs.com.ng',
   logo: 'https://swiftgigs.com.ng/logo-icon.png',
+  // Entity links for Google's Knowledge Graph & AI assistants.
+  // TODO: append LinkedIn/Instagram profile URLs when those go live.
+  sameAs: [
+    'https://x.com/swiftgigs',
+  ],
   areaServed: { '@type': 'Country', name: 'Nigeria' },
   contactPoint: {
     '@type': 'ContactPoint',
