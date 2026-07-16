@@ -157,13 +157,13 @@ export default function BlogPage() {
       <section className="py-14 md:py-20 px-4">
         <div className="final-cta-card max-w-5xl mx-auto rounded-[2rem] text-white px-6 sm:px-10 py-10 sm:py-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
-            <h3 className="font-display font-bold text-2xl mb-2">Need help right now?</h3>
-            <p className="text-white/70 text-[15px] leading-relaxed">Skip the reading — just send us a message and get it done in minutes.</p>
+            <h3 className="font-display font-bold text-2xl mb-2">Want to be first in line?</h3>
+            <p className="text-white/70 text-[15px] leading-relaxed">We&apos;re launching soon — join the waitlist and we&apos;ll message you the moment we go live.</p>
           </div>
-          <a href="https://wa.me/1234567890?text=Hi%20Swiftgigs" target="_blank" rel="noopener noreferrer"
+          <a href="/waitlist"
             className="self-start sm:self-auto shrink-0 inline-flex items-center gap-2 bg-white text-primary hover:bg-white/90 font-bold rounded-full px-6 py-3 text-sm transition-colors">
             <WhatsAppIcon className="w-4 h-4" />
-            Start on WhatsApp
+            Join the waitlist
           </a>
         </div>
       </section>

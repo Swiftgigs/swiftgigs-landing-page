@@ -57,12 +57,12 @@ export function PageNav({
             >
               <ArrowLeft className="w-4 h-4" />
             </Link>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+            <Link href="/waitlist">
               <Button size="sm" className="bg-primary hover:bg-primary/90 text-white rounded-full px-4 sm:px-5 font-semibold h-9">
                 <WhatsAppIcon className="w-3.5 h-3.5 sm:mr-1" />
-                <span className="hidden sm:inline">Request a service</span>
+                <span className="hidden sm:inline">Join the waitlist</span>
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -108,6 +108,17 @@ export function PageFooter() {
               <li><a href="mailto:support@swiftgigs.com" className="hover:text-white transition">Email</a></li>
             </ul>
           </div>
+        </div>
+
+        <div className="flex justify-center md:justify-start mb-6">
+          <span className="inline-flex items-center gap-3 bg-white/[0.06] border border-white/10 rounded-full pl-1.5 pr-5 py-1.5">
+            <Image src="/cac-logo.png" alt="Corporate Affairs Commission (CAC) Nigeria seal" width={585} height={579}
+              className="h-9 w-9 rounded-full bg-white object-contain" />
+            <span className="text-left leading-tight">
+              <span className="block text-[12.5px] font-semibold text-white/85">CAC Registered Business</span>
+              <span className="block text-[11px] text-white/45">Corporate Affairs Commission · Nigeria</span>
+            </span>
+          </span>
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[13px] text-white/35">

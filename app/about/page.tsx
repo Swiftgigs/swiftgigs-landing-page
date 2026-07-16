@@ -182,10 +182,10 @@ export default function AboutPage() {
             <p className="text-white/75 mb-9 text-lg leading-relaxed max-w-lg mx-auto">
               Join the hundreds of Nigerians who have already discovered how easy getting things done can be.
             </p>
-            <a href="https://wa.me/1234567890?text=Hi%20Swiftgigs" target="_blank" rel="noopener noreferrer"
+            <a href="/waitlist"
               className="inline-flex items-center gap-2 bg-white text-primary hover:bg-white/90 font-bold rounded-full px-8 py-4 transition-colors">
               <WhatsAppIcon className="w-5 h-5" />
-              Start on WhatsApp
+              Join the waitlist
             </a>
             <p className="text-sm text-white/60 mt-5">
               Or{' '}

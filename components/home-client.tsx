@@ -474,13 +474,13 @@ export function HomeClient() {
             </div>
 
             <div className="hidden md:flex items-center shrink-0">
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+              <Link href="/waitlist">
                 <Button size="sm" className="bg-primary hover:bg-primary/90 text-white rounded-full px-5 font-semibold h-9 group">
                   <WhatsAppIcon className="w-3.5 h-3.5 mr-1" />
-                  Request a service
+                  Join the waitlist
                   <ArrowRight className="w-3.5 h-3.5 ml-1 -mr-0.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
                 </Button>
-              </a>
+              </Link>
             </div>
 
             <div className="flex md:hidden items-center">
@@ -529,15 +529,14 @@ export function HomeClient() {
                   ))}
 
                   <motion.div variants={menuItemVariants} className="pt-2.5 mt-1.5 border-t border-border/60 px-1">
-                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"
-                      onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/waitlist" onClick={() => setMobileMenuOpen(false)}>
                       <Button className="bg-primary hover:bg-primary/90 text-white rounded-full w-full font-semibold h-11">
                         <WhatsAppIcon className="w-4 h-4 mr-1.5" />
-                        Request a service
+                        Join the waitlist
                       </Button>
-                    </a>
+                    </Link>
                     <p className="text-center text-[11.5px] text-foreground/45 mt-2.5 mb-0.5">
-                      Free to try · Available across Nigeria 🇳🇬
+                      Launching soon · Available across Nigeria 🇳🇬
                     </p>
                   </motion.div>
                 </motion.div>
@@ -582,14 +581,14 @@ export function HomeClient() {
 
               <motion.div variants={fadeUp} initial="hidden" animate="show" custom={3}
                 className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-10">
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                <Link href="/waitlist">
                   <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
                     <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full font-semibold px-7 w-full sm:w-auto h-12 text-[15px] shadow-[0_10px_28px_-10px_rgba(134,87,162,0.65)]">
                       <WhatsAppIcon className="w-4 h-4 mr-2" />
-                      Start on WhatsApp
+                      Join the waitlist
                     </Button>
                   </motion.div>
-                </a>
+                </Link>
                 <a href="#how-it-works">
                   <Button size="lg" variant="ghost" className="rounded-full font-semibold px-6 w-full sm:w-auto h-12 text-[15px] text-foreground/70 hover:text-foreground">
                     See how it works
@@ -780,11 +779,11 @@ export function HomeClient() {
                   </div>
 
                   <AnimateIn variant="fade-up" delay={380} className="mt-10 ml-5 sm:ml-[72px]">
-                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"
+                    <Link href="/waitlist"
                       className="inline-flex items-center gap-2 font-semibold text-primary hover:gap-3 transition-all">
-                      Try it now — it takes 60 seconds
+                      Join the waitlist — it takes 60 seconds
                       <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </Link>
                   </AnimateIn>
                 </div>
 
@@ -833,7 +832,7 @@ export function HomeClient() {
                     <div>
                       <h3 className="font-display font-bold text-2xl mb-2">Verified people, not strangers</h3>
                       <p className="text-foreground/60 leading-relaxed max-w-lg">
-                        Every worker passes ID verification, guarantor checks and an in-person screening
+                        Every worker passes ID verification, guarantor checks and an in-person screening call
                         before their first job — then keeps earning your trust through ratings.
                       </p>
                     </div>
@@ -889,10 +888,10 @@ export function HomeClient() {
                 <div className="mt-4 rounded-3xl border border-border bg-card p-6 sm:p-8 md:p-10">
                   <div className="flex flex-wrap items-center justify-between gap-4 mb-7">
                     <h3 className="font-display font-bold text-2xl">What can we help you with?</h3>
-                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"
+                    <Link href="/waitlist"
                       className="text-sm font-semibold text-primary inline-flex items-center gap-1.5 hover:gap-2.5 transition-all">
-                      Request anything <ArrowRight className="w-4 h-4" />
-                    </a>
+                      Join the waitlist <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
                   <div className="flex flex-wrap gap-2.5">
                     {['House Cleaning', 'Errand Running', 'Grocery Shopping', 'Quick Repairs', 'Plumbing', 'Moving Assistance', 'Deliveries', 'Beauty at Home', 'Laundry Pickup', 'Handyman Jobs', 'Personal Assistance'].map((s) => (
@@ -941,14 +940,14 @@ export function HomeClient() {
                     ))}
                   </div>
                   <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 [&_button]:w-full sm:[&_button]:w-auto">
-                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="block sm:inline-block">
+                    <Link href="/waitlist" className="block sm:inline-block">
                       <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }} className="block sm:inline-block">
                         <Button size="lg" className="bg-white text-ink hover:bg-white/90 rounded-full font-semibold px-7 h-12">
-                          Start your first task
+                          Join the waitlist
                           <ArrowRight className="w-4 h-4 ml-1.5" />
                         </Button>
                       </motion.div>
-                    </a>
+                    </Link>
                     <Button size="lg" variant="ghost" onClick={() => setModalSrc('/compiled-scenes-main.mp4')}
                       className="rounded-full font-semibold px-6 h-12 text-white/85 hover:text-white hover:bg-white/10 border border-white/20">
                       <Play className="w-4 h-4 mr-2 fill-current" />
@@ -999,12 +998,14 @@ export function HomeClient() {
                     ))}
                   </div>
 
-                  <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }} className="inline-block">
-                    <Button size="lg" className="bg-ink text-white hover:bg-ink/90 rounded-full font-semibold px-7 h-12">
-                      Become a worker
-                      <ArrowRight className="w-4 h-4 ml-1.5" />
-                    </Button>
-                  </motion.div>
+                  <Link href="/waitlist" className="inline-block">
+                    <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }} className="inline-block">
+                      <Button size="lg" className="bg-ink text-white hover:bg-ink/90 rounded-full font-semibold px-7 h-12">
+                        Join the worker waitlist
+                        <ArrowRight className="w-4 h-4 ml-1.5" />
+                      </Button>
+                    </motion.div>
+                  </Link>
                 </AnimateIn>
               </div>
             </section>
@@ -1150,15 +1151,15 @@ export function HomeClient() {
                   <p className="text-lg text-white/75 mb-10 max-w-lg mx-auto leading-relaxed">
                     No forms. No stress. No delays. Just WhatsApp us and get it done.
                   </p>
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                  <Link href="/waitlist">
                     <motion.div whileHover={{ y: -2, scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
                       <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full font-bold text-base px-8 h-13">
                         <WhatsAppIcon className="w-5 h-5 mr-2" />
-                        Start on WhatsApp now
+                        Join the waitlist
                       </Button>
                     </motion.div>
-                  </a>
-                  <p className="text-sm text-white/58 mt-5">Free to try · No commitments · Available across Nigeria</p>
+                  </Link>
+                  <p className="text-sm text-white/58 mt-5">Launching soon · No commitments · Available across Nigeria</p>
                 </div>
               </div>
             </AnimateIn>
@@ -1202,6 +1203,17 @@ export function HomeClient() {
                     <li><a href="mailto:support@swiftgigs.com" className="hover:text-white transition">Email</a></li>
                   </ul>
                 </div>
+              </div>
+
+              <div className="flex justify-center md:justify-start mb-6">
+                <span className="inline-flex items-center gap-3 bg-white/[0.06] border border-white/10 rounded-full pl-1.5 pr-5 py-1.5">
+                  <Image src="/cac-logo.png" alt="Corporate Affairs Commission (CAC) Nigeria seal" width={585} height={579}
+                    className="h-9 w-9 rounded-full bg-white object-contain" />
+                  <span className="text-left leading-tight">
+                    <span className="block text-[12.5px] font-semibold text-white/85">CAC Registered Business</span>
+                    <span className="block text-[11px] text-white/45">Corporate Affairs Commission · Nigeria</span>
+                  </span>
+                </span>
               </div>
 
               <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[13px] text-white/35">

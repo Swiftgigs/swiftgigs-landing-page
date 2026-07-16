@@ -156,10 +156,10 @@ export default function BlogPost3() {
             <div className="final-cta-card text-white rounded-3xl p-8 mt-6 text-center">
               <p className="text-lg font-bold mb-2">Ready to try Swiftgigs?</p>
               <p className="text-white/70 text-sm mb-5">Your first task could be done before you finish your next cup of tea.</p>
-              <a href="https://wa.me/1234567890?text=Hi%20Swiftgigs" target="_blank" rel="noopener noreferrer"
+              <a href="/waitlist"
                 className="inline-flex items-center gap-2 bg-white text-primary hover:bg-white/90 font-bold rounded-full px-6 py-3 text-sm transition-colors">
                 <WhatsAppIcon className="w-4 h-4" />
-                Start on WhatsApp Now
+                Join the waitlist
               </a>
             </div>
           </AnimateIn>
