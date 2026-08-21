@@ -4,7 +4,7 @@
 export const howItWorksSteps = [
   {
     title: 'Message Us on WhatsApp',
-    desc: 'Tell us what you need — an errand, a cleaner, a quick repair — in one chat message.',
+    desc: 'Tell us what you need in one chat message: an errand, a cleaner, a quick repair.',
   },
   {
     title: 'Get Matched in Minutes',
@@ -26,7 +26,7 @@ export type Faq = {
 export const faqs: Faq[] = [
   {
     q: 'What is Swiftgigs?',
-    a: 'Swiftgigs is a WhatsApp-based platform that connects people in Nigeria with vetted local workers for everyday tasks like cleaning, errands, deliveries, and small repairs — no app download required.',
+    a: 'Swiftgigs is a WhatsApp-based platform that connects people in Nigeria with vetted local workers for everyday tasks like cleaning, errands, deliveries, and small repairs, no app download required.',
     link: { href: '/blog/making-help-accessible-in-nigeria', label: 'Read our story' },
   },
   {
@@ -53,7 +53,7 @@ export const faqs: Faq[] = [
   },
   {
     q: 'How much does Swiftgigs cost?',
-    a: 'Jobs start from as low as ₦1,000. Prices are not fixed — you negotiate and agree the final price with your service provider through Swiftgigs before the job starts, with no hidden fees.',
+    a: 'Jobs start from as low as ₦1,000. Prices are not fixed. You negotiate and agree the final price with your service provider through Swiftgigs before the job starts, with no hidden fees.',
   },
   {
     q: 'How do I become a Swiftgigs worker?',

@@ -74,7 +74,7 @@ export default function BlogPost1() {
         <div className="space-y-6 text-[1.0625rem] leading-[1.75] text-foreground/90">
           <AnimateIn variant="fade-up">
             <p>
-              Nigeria is a country of extraordinary hustle. From Lagos to Abuja, people are working hard —
+              Nigeria is a country of extraordinary hustle. From Lagos to Abuja, people are working hard, 
               building businesses, raising families, and pushing forward every single day. But there&apos;s
               a hidden cost to all that productivity: the hours and energy spent on everyday tasks that
               could easily be handed off to someone else.
@@ -85,7 +85,7 @@ export default function BlogPost1() {
             <p>
               Think about it. How much time do you spend running errands you could send someone else on?
               How often have you wished for reliable help with a home deep-clean, a pickup across town,
-              or a quick repair job? These are small things individually — but they add up to hours every week.
+              or a quick repair job? These are small things individually, but they add up to hours every week.
             </p>
           </AnimateIn>
 
@@ -93,7 +93,7 @@ export default function BlogPost1() {
             <p>
               The problem isn&apos;t that help isn&apos;t available. Nigeria has millions of skilled,
               hardworking people actively looking for flexible income opportunities. The problem is
-              connection — finding the right person quickly, trusting that they&apos;re reliable, and
+              connection, finding the right person quickly, trusting that they&apos;re reliable, and
               having a safe way to pay.
             </p>
           </AnimateIn>
@@ -101,10 +101,10 @@ export default function BlogPost1() {
           <AnimateIn variant="fade-up">
             <h2 className="text-2xl font-display font-bold mt-10 mb-2">That&apos;s exactly what Swiftgigs was built to solve.</h2>
             <p>
-              We started with a simple insight: most Nigerians already use WhatsApp for everything —
+              We started with a simple insight: most Nigerians already use WhatsApp for everything, 
               family groups, business chats, buying and selling. So why not use it to book help for
               everyday tasks? With Swiftgigs, you send a message, describe what you need, and we find
-              a verified worker near you — usually within minutes. No app to download. No long
+              a verified worker near you, usually within minutes. No app to download. No long
               registration forms. No wondering if someone will show up.
             </p>
           </AnimateIn>
@@ -119,7 +119,7 @@ export default function BlogPost1() {
             <h2 className="text-2xl font-display font-bold mt-10 mb-2">The Trust Factor</h2>
             <p>
               Every Swiftgigs worker goes through a verification process before they&apos;re approved
-              to take a single job — we check identification, collect references, and build a profile
+              to take a single job, we check identification, collect references, and build a profile
               that customers can review before booking. Workers who consistently deliver excellent
               service earn higher ratings and more opportunities. Workers who fall short are held accountable.
             </p>
@@ -128,17 +128,17 @@ export default function BlogPost1() {
           <AnimateIn variant="fade-up">
             <p>
               For customers, our escrow payment system means your money is only released when you confirm
-              the task is done to your satisfaction. If something goes wrong, our support team steps in — fast.
+              the task is done to your satisfaction. If something goes wrong, our support team steps in, fast.
             </p>
           </AnimateIn>
 
           <AnimateIn variant="fade-up">
             <StoryCard
-              name="Chioma A."
-              where="Abuja"
-              service="House Cleaning"
-              quote="I needed someone urgently and got help within 30 minutes. The worker was polite and professional."
-              detail="Matched in 6 minutes · Paid through escrow"
+              name="Bola Opatudun"
+              where="Closed beta"
+              service="Beta tester"
+              quote="It is blazing fast. One message and the whole flow ran inside WhatsApp, so there was nothing new to learn."
+              detail="Closed beta · Full request and escrow flow tested"
             />
           </AnimateIn>
 
@@ -149,7 +149,7 @@ export default function BlogPost1() {
               in Lagos, the reality of variable power supply, and the challenges of coordinating on-ground
               logistics across dense urban neighbourhoods. Our pricing is fair and transparent, starting
               from as low as ₦1,000 for simple tasks. We&apos;re not trying to replace the informal
-              economy — we&apos;re trying to make it better, safer, and more accessible for everyone.
+              economy, we&apos;re trying to make it better, safer, and more accessible for everyone.
             </p>
           </AnimateIn>
 
@@ -164,9 +164,9 @@ export default function BlogPost1() {
 
           <AnimateIn variant="fade-up">
             <StatStrip items={[
-              { value: '500+', label: 'Tasks completed' },
-              { value: '< 10 min', label: 'Average match time' },
-              { value: '4.9/5', label: 'Customer rating' },
+              { value: '20', label: 'Closed beta testers' },
+              { value: '7', label: 'Service categories' },
+              { value: '100%', label: 'Escrow-protected' },
             ]} />
           </AnimateIn>
 

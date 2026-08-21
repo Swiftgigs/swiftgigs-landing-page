@@ -4,7 +4,7 @@ import { PageNav, PageFooter } from '@/components/page-nav';
 export const metadata: Metadata = {
   title: 'Terms & Conditions | Swiftgigs',
   description:
-    'Swiftgigs\' Terms & Conditions — governing the relationship between customers, workers, and the platform. Updated May 2026.',
+    'Swiftgigs\' Terms & Conditions, governing the relationship between customers, workers, and the platform. Updated May 2026.',
   openGraph: {
     title: 'Terms & Conditions | Swiftgigs',
     description: 'Read our Terms & Conditions for using the Swiftgigs platform.',
@@ -29,7 +29,7 @@ type Section = {
 const sections: Section[] = [
   {
     num: '01', icon: FileText, title: 'Acceptance of Terms',
-    body: 'By accessing or using Swiftgigs — whether through WhatsApp, this website, or any affiliated platform — you confirm that you have read, understood, and agree to be bound by these Terms & Conditions and our Privacy Policy. If you do not accept these terms, you may not use our services. These terms apply to all users of the platform including customers and workers.',
+    body: 'By accessing or using Swiftgigs, whether through WhatsApp, this website, or any affiliated platform, you confirm that you have read, understood, and agree to be bound by these Terms & Conditions and our Privacy Policy. If you do not accept these terms, you may not use our services. These terms apply to all users of the platform including customers and workers.',
   },
   {
     num: '02', icon: WhatsAppIcon, title: 'Platform Description',
@@ -74,7 +74,7 @@ const sections: Section[] = [
     bullets: [
       'Payment terms and amounts are agreed between the Customer and Worker before a task begins',
       'Swiftgigs may hold customer funds in escrow until task completion is confirmed',
-      'A service fee or platform commission may be deducted from worker earnings — current rates are disclosed at booking',
+      'A service fee or platform commission may be deducted from worker earnings, current rates are disclosed at booking',
       'Workers receive payment after successful task completion and customer confirmation',
       'Swiftgigs reserves the right to adjust its fee structure with advance notice to users',
       'Disputed payments will be held in escrow until a resolution is formally reached',
@@ -104,11 +104,11 @@ const sections: Section[] = [
   },
   {
     num: '09', icon: Lock, title: 'Intellectual Property',
-    body: 'All content on the Swiftgigs platform — including but not limited to logos, brand assets, website content, software, and trade names — is owned by or licensed to Swiftgigs and is protected under Nigerian and applicable international intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from our content without express prior written permission from Swiftgigs.',
+    body: 'All content on the Swiftgigs platform, including but not limited to logos, brand assets, website content, software, and trade names, is owned by or licensed to Swiftgigs and is protected under Nigerian and applicable international intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from our content without express prior written permission from Swiftgigs.',
   },
   {
     num: '10', icon: AlertTriangle, title: 'Disclaimers & Limitation of Liability',
-    body: 'Swiftgigs provides its platform strictly on an "as is" and "as available" basis. We make no warranties — express or implied — regarding the quality, safety, timeliness, or fitness for purpose of services performed by workers. To the maximum extent permitted by Nigerian law, Swiftgigs shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the platform. Our total liability for any claim shall not exceed the amount you paid for the specific transaction giving rise to the claim.',
+    body: 'Swiftgigs provides its platform strictly on an "as is" and "as available" basis. We make no warranties, express or implied, regarding the quality, safety, timeliness, or fitness for purpose of services performed by workers. To the maximum extent permitted by Nigerian law, Swiftgigs shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the platform. Our total liability for any claim shall not exceed the amount you paid for the specific transaction giving rise to the claim.',
   },
   {
     num: '11', icon: Shield, title: 'Indemnification',
@@ -141,7 +141,7 @@ const sections: Section[] = [
 
 const tldr = [
   'Swiftgigs connects customers with independent workers for on-demand tasks',
-  'Workers are independent contractors — not Swiftgigs employees',
+  'Workers are independent contractors, not Swiftgigs employees',
   'You must be 18 or older to use the platform',
   'Payments are secured through our escrow system',
   'Accounts can be suspended for fraud, misconduct, or abuse',
@@ -218,7 +218,7 @@ export default function TermsPage() {
                   {section.isContact && (
                     <div className="grid sm:grid-cols-2 gap-4 pt-1">
                       <a
-                        href="https://wa.me/1234567890"
+                        href="/waitlist"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 bg-card border border-border rounded-xl p-4 hover:border-primary/40 transition group"
@@ -230,7 +230,7 @@ export default function TermsPage() {
                         </div>
                       </a>
                       <a
-                        href="mailto:legal@swiftgigs.com"
+                        href="mailto:support@swiftgigs.com.ng"
                         className="flex items-center gap-3 bg-card border border-border rounded-xl p-4 hover:border-primary/40 transition group"
                       >
                         <Mail className="w-5 h-5 text-primary shrink-0" />

@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
+import { MetaIcon } from '@/components/meta-icon';
 import { Button } from '@/components/ui/button';
 
-const WHATSAPP_LINK = 'https://wa.me/1234567890?text=Hi%20Swiftgigs';
 
 export function PageNav({
   backHref = '/',
@@ -78,12 +78,12 @@ export function PageFooter() {
           <div className="col-span-2 md:col-span-1">
             <p className="font-display font-bold text-xl mb-3">Swiftgigs</p>
             <p className="text-sm text-white/50 leading-relaxed max-w-[16rem] mb-6">
-              Vetted local help for everyday tasks — all on WhatsApp. Available across Nigeria.
+              Vetted local help for everyday tasks, all on WhatsApp. Available across Nigeria.
             </p>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"
+            <a href="/waitlist"
               className="inline-flex items-center gap-2 bg-white/[0.07] hover:bg-white/[0.12] border border-white/10 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors">
               <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-              Chat with us
+              Join the waitlist
             </a>
           </div>
           <div>
@@ -104,19 +104,28 @@ export function PageFooter() {
           <div className="col-span-2 sm:col-span-1 md:col-span-1">
             <h4 className="font-semibold mb-4 text-white/40 text-[13px] uppercase tracking-wider">Contact</h4>
             <ul className="space-y-3 text-[15px] text-white/65">
-              <li><a href="https://wa.me/1234567890" className="hover:text-white transition">WhatsApp</a></li>
-              <li><a href="mailto:support@swiftgigs.com" className="hover:text-white transition">Email</a></li>
+              <li><a href="/waitlist" className="hover:text-white transition">Waitlist</a></li>
+              <li><a href="mailto:support@swiftgigs.com.ng" className="hover:text-white transition">Email</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="flex justify-center md:justify-start mb-6">
+        <div className="flex flex-wrap justify-center md:justify-start gap-2.5 mb-6">
           <span className="inline-flex items-center gap-3 bg-white/[0.06] border border-white/10 rounded-full pl-1.5 pr-5 py-1.5">
             <Image src="/cac-logo.png" alt="Corporate Affairs Commission (CAC) Nigeria seal" width={585} height={579}
               className="h-9 w-9 rounded-full bg-white object-contain" />
             <span className="text-left leading-tight">
               <span className="block text-[12.5px] font-semibold text-white/85">CAC Registered Business</span>
               <span className="block text-[11px] text-white/45">Corporate Affairs Commission · Nigeria</span>
+            </span>
+          </span>
+          <span className="inline-flex items-center gap-3 bg-white/[0.06] border border-white/10 rounded-full pl-1.5 pr-5 py-1.5">
+            <span className="h-9 w-9 rounded-full bg-white flex items-center justify-center shrink-0">
+              <MetaIcon className="w-[22px] h-auto" />
+            </span>
+            <span className="text-left leading-tight">
+              <span className="block text-[12.5px] font-semibold text-white/85">Meta Verified Business</span>
+              <span className="block text-[11px] text-white/45">Business verified by Meta</span>
             </span>
           </span>
         </div>

@@ -80,7 +80,7 @@ const sections: Section[] = [
   },
   {
     num: '06', icon: Lock, title: 'Data Security',
-    body: 'We implement industry-standard technical and organisational measures to protect your personal data against unauthorised access, loss, or disclosure. These include encrypted data storage, access controls, and regular security reviews. However, no system is completely secure — you are responsible for safeguarding your WhatsApp account and any credentials associated with the platform.',
+    body: 'We implement industry-standard technical and organisational measures to protect your personal data against unauthorised access, loss, or disclosure. These include encrypted data storage, access controls, and regular security reviews. However, no system is completely secure, you are responsible for safeguarding your WhatsApp account and any credentials associated with the platform.',
   },
   {
     num: '07', icon: Clock, title: 'Data Retention',
@@ -221,7 +221,7 @@ export default function PrivacyPage() {
                   {section.isContact && (
                     <div className="grid sm:grid-cols-2 gap-4 pt-1">
                       <a
-                        href="https://wa.me/1234567890"
+                        href="/waitlist"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 bg-card border border-border rounded-xl p-4 hover:border-primary/40 transition group"
@@ -233,12 +233,12 @@ export default function PrivacyPage() {
                         </div>
                       </a>
                       <a
-                        href="mailto:privacy@swiftgigs.com"
+                        href="mailto:support@swiftgigs.com.ng"
                         className="flex items-center gap-3 bg-card border border-border rounded-xl p-4 hover:border-primary/40 transition group"
                       >
                         <Mail className="w-5 h-5 text-primary shrink-0" />
                         <div>
-                          <p className="text-sm font-semibold group-hover:text-primary transition">support@swiftgigs.com</p>
+                          <p className="text-sm font-semibold group-hover:text-primary transition">support@swiftgigs.com.ng</p>
                           <p className="text-xs text-muted-foreground">Data protection enquiries</p>
                         </div>
                       </a>

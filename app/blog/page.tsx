@@ -7,11 +7,11 @@ import { PostBanner, type BannerVariant } from '@/components/blog-visuals';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Blog — Insights on Local Services & Productivity in Nigeria',
+  title: 'Blog | Insights on Local Services & Productivity in Nigeria',
   description:
-    'Tips, guides, and stories about local services, productivity, and life in Nigeria — from the Swiftgigs team.',
+    'Tips, guides, and stories about local services, productivity, and life in Nigeria, from the Swiftgigs team.',
   openGraph: {
-    title: 'Swiftgigs Blog — Insights on Local Services & Productivity in Nigeria',
+    title: 'Swiftgigs Blog | Insights on Local Services & Productivity in Nigeria',
     description: 'Tips, guides, and stories from the Swiftgigs team.',
     type: 'website',
     url: 'https://swiftgigs.com.ng/blog',
@@ -30,7 +30,7 @@ const posts = [
     category: 'Company',
     categoryColor: 'bg-primary/10 text-primary',
     title: 'How Swiftgigs Is Making Everyday Help More Accessible in Nigeria',
-    excerpt: 'In Nigeria, finding reliable help for everyday tasks has always been harder than it should be. We built Swiftgigs to change that — using a tool 90% of Nigerians already use every day.',
+    excerpt: 'In Nigeria, finding reliable help for everyday tasks has always been harder than it should be. We built Swiftgigs to change that, using a tool 90% of Nigerians already use every day.',
     date: 'May 1, 2025',
     readTime: '3 min read',
     featured: true,
@@ -41,7 +41,7 @@ const posts = [
     category: 'Productivity',
     categoryColor: 'bg-emerald-500/10 text-emerald-700',
     title: '5 Everyday Tasks You Should Stop Doing Yourself',
-    excerpt: 'Your time is your most valuable resource. Here are five common tasks Swiftgigs customers love delegating — and why the math almost always works in your favour.',
+    excerpt: 'Your time is your most valuable resource. Here are five common tasks Swiftgigs customers love delegating, and why the math almost always works in your favour.',
     date: 'Apr 24, 2025',
     readTime: '4 min read',
     featured: false,
@@ -52,7 +52,7 @@ const posts = [
     category: 'Guide',
     categoryColor: 'bg-sky-500/10 text-sky-700',
     title: 'Your First Swiftgigs Experience: What to Expect',
-    excerpt: 'Not sure what to expect? Here\'s exactly what happens from your first WhatsApp message to a completed task — step by step, with tips for a great experience.',
+    excerpt: 'Not sure what to expect? Here\'s exactly what happens from your first WhatsApp message to a completed task, step by step, with tips for a great experience.',
     date: 'Apr 15, 2025',
     readTime: '2 min read',
     featured: false,
@@ -158,7 +158,7 @@ export default function BlogPage() {
         <div className="final-cta-card max-w-5xl mx-auto rounded-[2rem] text-white px-6 sm:px-10 py-10 sm:py-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
             <h3 className="font-display font-bold text-2xl mb-2">Want to be first in line?</h3>
-            <p className="text-white/70 text-[15px] leading-relaxed">We&apos;re launching soon — join the waitlist and we&apos;ll message you the moment we go live.</p>
+            <p className="text-white/70 text-[15px] leading-relaxed">We&apos;re launching soon, join the waitlist and we&apos;ll message you the moment we go live.</p>
           </div>
           <a href="/waitlist"
             className="self-start sm:self-auto shrink-0 inline-flex items-center gap-2 bg-white text-primary hover:bg-white/90 font-bold rounded-full px-6 py-3 text-sm transition-colors">

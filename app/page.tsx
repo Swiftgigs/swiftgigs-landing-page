@@ -4,9 +4,9 @@ import { HomeClient } from '@/components/home-client';
 import { faqs, howItWorksSteps } from '@/lib/site-content';
 
 export const metadata: Metadata = {
-  title: 'Swiftgigs — On-Demand Local Help via WhatsApp | Nigeria',
+  title: 'Swiftgigs | On-Demand Local Help via WhatsApp, Nigeria',
   description:
-    'Swiftgigs is Nigeria’s WhatsApp-based platform for on-demand local help, available nationwide. Message us for cleaning, errands, deliveries & repairs — get matched with a vetted worker in minutes. No app needed.',
+    'Swiftgigs is Nigeria’s WhatsApp-based platform for on-demand local help, available nationwide. Message us for cleaning, errands, deliveries & repairs get matched with a vetted worker in minutes. No app needed.',
   keywords: [
     'on-demand tasks Nigeria',
     'task marketplace Lagos',
@@ -20,20 +20,20 @@ export const metadata: Metadata = {
   authors: [{ name: 'Swiftgigs' }],
   creator: 'Swiftgigs',
   openGraph: {
-    title: 'Swiftgigs — On-Demand Local Help via WhatsApp',
+    title: 'Swiftgigs | On-Demand Local Help via WhatsApp',
     description:
-      'Connect with verified local workers for cleaning, errands, deliveries & more in Nigeria. No app needed — just WhatsApp.',
+      'Connect with verified local workers for cleaning, errands, deliveries & more in Nigeria. No app needed just WhatsApp.',
     type: 'website',
     url: 'https://swiftgigs.com.ng',
     siteName: 'Swiftgigs',
     locale: 'en_NG',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Swiftgigs — On-Demand Tasks via WhatsApp in Nigeria' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Swiftgigs on-demand tasks via WhatsApp in Nigeria' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Swiftgigs — Get Things Done via WhatsApp',
+    title: 'Swiftgigs | Get Things Done via WhatsApp',
     description: 'Verified workers for everyday tasks in Nigeria. No app needed.',
-    site: '@swiftgigs',
+    site: '@swiftgigs_tech',
     images: ['/og-image.png'],
   },
   alternates: { canonical: 'https://swiftgigs.com.ng' },
@@ -51,7 +51,7 @@ const organizationJsonLd = {
   // Entity links for Google's Knowledge Graph & AI assistants.
   // TODO: append LinkedIn/Instagram profile URLs when those go live.
   sameAs: [
-    'https://x.com/swiftgigs',
+    'https://x.com/swiftgigs_tech',
   ],
   areaServed: { '@type': 'Country', name: 'Nigeria' },
   contactPoint: {

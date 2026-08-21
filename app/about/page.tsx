@@ -6,11 +6,11 @@ import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About Swiftgigs — Building Nigeria\'s Most Trusted Task Platform',
+  title: 'About Swiftgigs | Building Nigeria\'s Most Trusted Task Platform',
   description:
-    'Learn about Swiftgigs\' mission to make everyday help instantly accessible to every Nigerian — safely, affordably, and via WhatsApp.',
+    'Learn about Swiftgigs\' mission to make everyday help instantly accessible to every Nigerian, safely, affordably, and via WhatsApp.',
   openGraph: {
-    title: 'About Swiftgigs — Building Nigeria\'s Most Trusted Task Platform',
+    title: 'About Swiftgigs | Building Nigeria\'s Most Trusted Task Platform',
     description: 'Our mission, values, and the story behind Swiftgigs.',
     type: 'website',
     url: 'https://swiftgigs.com.ng/about',
@@ -23,20 +23,20 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: '500+', label: 'Tasks Completed' },
-  { value: '50+',  label: 'Verified Workers' },
-  { value: '3',    label: 'Cities Served' },
-  { value: '4.9★', label: 'Average Rating' },
+  { value: '20',   label: 'Closed Beta Testers' },
+  { value: '7',    label: 'Service Categories' },
+  { value: '100%', label: 'Escrow-Protected' },
+  { value: 'CAC',  label: 'Registered Business' },
 ];
 
 const values = [
   { icon: Zap,    title: 'Speed',     desc: 'We believe your time is your most valuable asset. Every feature we build is optimised to save you time and reduce friction.' },
-  { icon: Shield, title: 'Trust',     desc: 'Every worker is verified before they take a single job. Every payment is protected by escrow. Safety isn\'t a feature — it\'s our foundation.' },
+  { icon: Shield, title: 'Trust',     desc: 'Every worker is verified before they take a single job. Every payment is protected by escrow. Safety isn\'t a feature, it\'s our foundation.' },
   { icon: Heart,  title: 'Community', desc: 'We\'re not just building a marketplace. We\'re creating real income opportunities for skilled people and making services more accessible for everyone.' },
 ];
 
 const differentiators = [
-  'No app download needed — we work entirely through WhatsApp',
+  'No app download needed, we work entirely through WhatsApp',
   'Workers are verified before onboarding, not after complaints',
   'Escrow payments mean you only pay when you\'re satisfied',
   'Designed specifically for the Nigerian context and market',
@@ -63,7 +63,7 @@ export default function AboutPage() {
           </h1>
           <p className="animate-in fade-in slide-in-from-bottom-4 duration-700 [animation-delay:200ms] text-base md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             We started with a simple belief: getting everyday things done should be as easy
-            as sending a WhatsApp message — safe, fast, and affordable for everyone.
+            as sending a WhatsApp message, safe, fast, and affordable for everyone.
           </p>
         </div>
       </section>
@@ -91,10 +91,10 @@ export default function AboutPage() {
           </AnimateIn>
           <div className="space-y-5 text-muted-foreground leading-relaxed text-lg">
             {[
-              'In Nigeria, finding reliable help for everyday tasks has always been harder than it needs to be. You rely on word-of-mouth referrals that fall through, deal with people who don\'t show up, or simply handle everything yourself — burning time and energy that could go toward things that matter more.',
-              'Meanwhile, millions of skilled, hardworking Nigerians are looking for flexible income opportunities. The talent exists. The demand exists. The missing piece was a reliable way to connect them — quickly, safely, and without friction.',
-              'We founded Swiftgigs on the idea that the best technology for Nigeria is technology people already use. Over 90% of Nigerians with smartphones use WhatsApp every day. So we built entirely around it — no app to download, no complicated registration, no learning curve.',
-              'Today, Swiftgigs is connecting clients with verified workers across Lagos, Abuja, and Port Harcourt. We\'re proud of every task completed, every worker who earned income through our platform, and every customer who got their day back. We\'re just getting started.',
+              'In Nigeria, finding reliable help for everyday tasks has always been harder than it needs to be. You rely on word-of-mouth referrals that fall through, deal with people who don\'t show up, or simply handle everything yourself, burning time and energy that could go toward things that matter more.',
+              'Meanwhile, millions of skilled, hardworking Nigerians are looking for flexible income opportunities. The talent exists. The demand exists. The missing piece was a reliable way to connect them, quickly, safely, and without friction.',
+              'We founded Swiftgigs on the idea that the best technology for Nigeria is technology people already use. Over 90% of Nigerians with smartphones use WhatsApp every day. So we built entirely around it, no app to download, no complicated registration, no learning curve.',
+              'We have completed a closed beta with 20 testers, running the full request, match, and escrow flow end to end. Their feedback shaped the product directly: the strongest ask was tougher identity checks, so NIN verification is going into worker onboarding before we open publicly. Our waitlist is live and we are onboarding our first workers now.',
             ].map((para, i) => (
               <AnimateIn key={i} variant="fade-up" delay={i * 80}>
                 <p>{para}</p>
@@ -108,8 +108,8 @@ export default function AboutPage() {
       <section className="py-16 md:py-20 px-4 bg-muted/40 border-y border-border">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
           {[
-            { icon: WhatsAppIcon, badge: 'Our Mission', title: 'Make everyday help instantly accessible to every Nigerian', desc: 'We exist to eliminate the friction between needing help and getting it — while creating meaningful income opportunities for skilled workers in our communities.' },
-            { icon: Users,         badge: 'Our Vision',  title: 'The operating system for local services in Africa', desc: 'We see a future where anyone in any African city can get reliable, affordable help for any task within minutes — through a platform that empowers both sides of the market.' },
+            { icon: WhatsAppIcon, badge: 'Our Mission', title: 'Make everyday help instantly accessible to every Nigerian', desc: 'We exist to eliminate the friction between needing help and getting it, while creating meaningful income opportunities for skilled workers in our communities.' },
+            { icon: Users,         badge: 'Our Vision',  title: 'The operating system for local services in Africa', desc: 'We see a future where anyone in any African city can get reliable, affordable help for any task within minutes, through a platform that empowers both sides of the market.' },
           ].map((card, i) => {
             const Icon = card.icon;
             return (

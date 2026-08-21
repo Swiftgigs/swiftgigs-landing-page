@@ -9,10 +9,10 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Your First Swiftgigs Experience: What to Expect',
   description:
-    'New to Swiftgigs? Here\'s exactly what happens from your first WhatsApp message to a completed task — step by step, with tips for a great first experience.',
+    'New to Swiftgigs? Here\'s exactly what happens from your first WhatsApp message to a completed task, step by step, with tips for a great first experience.',
   openGraph: {
     title: 'Your First Swiftgigs Experience: What to Expect',
-    description: 'Step-by-step guide to your first Swiftgigs task — no surprises.',
+    description: 'Step-by-step guide to your first Swiftgigs task, no surprises.',
     type: 'article',
     url: 'https://swiftgigs.com.ng/blog/getting-started-with-swiftgigs',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
@@ -42,15 +42,15 @@ const articleJsonLd = {
 };
 
 const steps = [
-  { num: '01', title: 'Send Us a Message on WhatsApp',  body: 'Head to our WhatsApp number and tap to start a chat. Tell us what you need in plain language — "I need someone to deep-clean my 2-bedroom apartment in Lekki tomorrow morning" or "I need an errand runner for 2 hours in Ikeja on Friday afternoon." No forms. No templates. Just talk to us like a person.' },
-  { num: '02', title: 'We Find Your Match',             body: 'Within minutes, our team reviews your request and matches you with a verified worker near your location. We factor in proximity, skill level, availability, and customer ratings — so you always get someone well-suited for your specific task.' },
-  { num: '03', title: 'Review and Confirm',             body: 'We\'ll share your matched worker\'s profile, the agreed price, and the expected timeline. You review and confirm when you\'re happy. There are no surprise fees — the price you confirm is the price you pay.' },
-  { num: '04', title: 'The Work Gets Done',             body: 'Your Swiftgigs worker arrives at the agreed time and gets to work. You can stay informed via WhatsApp — workers provide progress updates as needed, and you can message them directly if anything changes.' },
-  { num: '05', title: 'Confirm and Pay',                body: 'Once the task is complete, confirm satisfaction and release payment through our secure escrow process. Then rate your experience — your honest feedback helps good workers get more opportunities and keeps quality high.' },
+  { num: '01', title: 'Send Us a Message on WhatsApp',  body: 'Head to our WhatsApp number and tap to start a chat. Tell us what you need in plain language, "I need someone to deep-clean my 2-bedroom apartment in Lekki tomorrow morning" or "I need an errand runner for 2 hours in Ikeja on Friday afternoon." No forms. No templates. Just talk to us like a person.' },
+  { num: '02', title: 'We Find Your Match',             body: 'Within minutes, our team reviews your request and matches you with a verified worker near your location. We factor in proximity, skill level, availability, and customer ratings, so you always get someone well-suited for your specific task.' },
+  { num: '03', title: 'Review and Confirm',             body: 'We\'ll share your matched worker\'s profile, the agreed price, and the expected timeline. You review and confirm when you\'re happy. There are no surprise fees, the price you confirm is the price you pay.' },
+  { num: '04', title: 'The Work Gets Done',             body: 'Your Swiftgigs worker arrives at the agreed time and gets to work. You can stay informed via WhatsApp, workers provide progress updates as needed, and you can message them directly if anything changes.' },
+  { num: '05', title: 'Confirm and Pay',                body: 'Once the task is complete, confirm satisfaction and release payment through our secure escrow process. Then rate your experience, your honest feedback helps good workers get more opportunities and keeps quality high.' },
 ];
 
 const tips = [
-  { tip: 'Be specific',        detail: 'The more detail you provide, the better your match — include location, timing, and any special requirements.' },
+  { tip: 'Be specific',        detail: 'The more detail you provide, the better your match, include location, timing, and any special requirements.' },
   { tip: 'Have everything ready', detail: 'If your task requires materials (cleaning products, tools, access codes), have them prepared before the worker arrives.' },
   { tip: 'Stay accessible',    detail: 'Keep WhatsApp notifications on during the booking process so we can confirm details quickly.' },
   { tip: 'Give honest feedback', detail: 'Ratings help great workers get more work and help us maintain the quality you expect.' },
@@ -88,7 +88,7 @@ export default function BlogPost3() {
         <div className="space-y-6 text-[1.0625rem] leading-[1.75] text-foreground/90">
           <AnimateIn variant="fade-up">
             <p>
-              Getting started with Swiftgigs takes less than 60 seconds — and your first task can often be
+              Getting started with Swiftgigs takes less than 60 seconds, and your first task can often be
               assigned within minutes. Here&apos;s exactly what happens from your first WhatsApp message to
               a completed task, with no surprises along the way.
             </p>
@@ -112,11 +112,11 @@ export default function BlogPost3() {
 
           <AnimateIn variant="fade-up">
             <StoryCard
-              name="Ngozi E."
-              where="Port Harcourt"
-              service="First-time customer"
-              quote="I was skeptical about letting a stranger in, but the verification and escrow made me comfortable."
-              detail="First task completed · Now a repeat customer"
+              name="Abdulkareem Yakubu"
+              where="Closed beta"
+              service="Beta tester"
+              quote="The product is lovely and easy to move around. My one ask was stronger identity checks, so putting NIN verification in before launch is the right call."
+              detail="Closed beta · Feedback drove NIN verification"
             />
           </AnimateIn>
 
@@ -147,7 +147,7 @@ export default function BlogPost3() {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 We&apos;re here. Message our support team immediately via WhatsApp and we&apos;ll investigate
                 and resolve the issue. Our escrow payment system means your money is fully protected until
-                you confirm you&apos;re satisfied — so you never pay for work that wasn&apos;t completed properly.
+                you confirm you&apos;re satisfied, so you never pay for work that wasn&apos;t completed properly.
               </p>
             </div>
           </AnimateIn>

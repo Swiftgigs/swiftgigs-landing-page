@@ -4,11 +4,11 @@ import { Zap, Globe, Heart, BookOpen, TrendingUp, Users, ArrowRight, Lightbulb, 
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 
 export const metadata: Metadata = {
-  title: 'Careers at Swiftgigs — Join Our Remote Internship Team',
+  title: 'Careers at Swiftgigs | Join Our Remote Internship Team',
   description:
-    'Help us build the future of local work in Nigeria. Swiftgigs is looking for passionate interns to contribute to something revolutionary — fully remote, no experience required.',
+    'Help us build the future of local work in Nigeria. Swiftgigs is looking for passionate interns to contribute to something revolutionary, fully remote, no experience required.',
   openGraph: {
-    title: 'Careers at Swiftgigs — Join Our Remote Internship Team',
+    title: 'Careers at Swiftgigs | Join Our Remote Internship Team',
     description: 'Fully remote internships at an early-stage Nigerian startup building something revolutionary.',
     type: 'website',
     url: 'https://swiftgigs.com.ng/careers',
@@ -24,7 +24,7 @@ const whatYouGet = [
   {
     icon: BookOpen,
     title: 'Real-World Experience',
-    desc: 'Work on an actual product used by real people — not dummy projects or sandbox exercises. Everything you build ships.',
+    desc: 'Work on an actual product used by real people, not dummy projects or sandbox exercises. Everything you build ships.',
   },
   {
     icon: TrendingUp,
@@ -34,7 +34,7 @@ const whatYouGet = [
   {
     icon: Globe,
     title: '100% Remote',
-    desc: 'Work from anywhere in Nigeria — or the world. We care about what you contribute, not when or where you clock in.',
+    desc: 'Work from anywhere in Nigeria, or the world. We care about what you contribute, not when or where you clock in.',
   },
   {
     icon: Users,
@@ -49,7 +49,7 @@ const whatYouGet = [
   {
     icon: Lightbulb,
     title: 'Portfolio-worthy Work',
-    desc: 'Everything you touch is real, live, and impactful. Walk away with work you\'re proud to show — not theoretical case studies.',
+    desc: 'Everything you touch is real, live, and impactful. Walk away with work you\'re proud to show, not theoretical case studies.',
   },
 ];
 
@@ -57,19 +57,19 @@ const roles = [
   {
     title: 'Product & Growth Intern',
     skills: ['Marketing', 'Content', 'Social Media', 'Community'],
-    description: 'Help us tell the Swiftgigs story. You\'ll create content, run social channels, experiment with growth ideas, and talk to real users. If you love building audiences and have a knack for what resonates with Nigerians online — this is yours.',
+    description: 'Help us tell the Swiftgigs story. You\'ll create content, run social channels, experiment with growth ideas, and talk to real users. If you love building audiences and have a knack for what resonates with Nigerians online, this is yours.',
     ideal: 'Someone curious about marketing, growth, or product who wants to see what it actually looks like in a startup from day one.',
   },
   {
     title: 'Operations & Support Intern',
     skills: ['Communication', 'Problem Solving', 'WhatsApp', 'Organisation'],
-    description: 'Be the voice and backbone of Swiftgigs. You\'ll handle customer and worker communication, spot operational gaps, and help design better processes. If you\'re the person who makes everything run smoother — we need you.',
+    description: 'Be the voice and backbone of Swiftgigs. You\'ll handle customer and worker communication, spot operational gaps, and help design better processes. If you\'re the person who makes everything run smoother, we need you.',
     ideal: 'Someone organised, empathetic, and energised by solving people\'s problems in real time.',
   },
   {
     title: 'Tech & Product Intern',
     skills: ['Next.js', 'React', 'TypeScript', 'Design'],
-    description: 'Work directly on the Swiftgigs platform — the website, internal tools, and the systems that power our operations. No ticket queues or slow sprints. Just meaningful work that ships.',
+    description: 'Work directly on the Swiftgigs platform, the website, internal tools, and the systems that power our operations. No ticket queues or slow sprints. Just meaningful work that ships.',
     ideal: 'A developer or designer who wants real shipping experience on a live product rather than another tutorial project.',
   },
 ];
@@ -96,7 +96,7 @@ export default function CareersPage() {
           </p>
           {/* <div className="inline-flex items-center gap-2.5 bg-amber-500/10 border border-amber-500/30 text-amber-700 rounded-xl px-4 py-3 text-sm font-medium">
             <Zap className="w-4 h-4 shrink-0" />
-            These are unpaid internship roles. We can&apos;t pay salaries yet — but we can
+            These are unpaid internship roles. We can&apos;t pay salaries yet, but we can
             offer something rare: the chance to help build something from scratch.
           </div> */}
         </div>
@@ -112,19 +112,19 @@ export default function CareersPage() {
           <div className="space-y-5 text-muted-foreground leading-relaxed text-lg">
             <p>
               We won&apos;t pretend to be something we&apos;re not. We&apos;re a startup at
-              the very beginning — no big funding rounds, no fancy office, no salary packages.
+              the very beginning, no big funding rounds, no fancy office, no salary packages.
               Just a real problem, a real product, and a real opportunity to help shape what
               this becomes.
             </p>
             <p>
-              What we&apos;re looking for are people who want to learn by doing — not by
+              What we&apos;re looking for are people who want to learn by doing, not by
               watching. People who see a half-built thing and want to help finish it. People
               who are more excited by the idea of &quot;I helped build that&quot; than
               &quot;I worked there.&quot;
             </p>
             <p>
               If that sounds like you, we want to hear from you. Every role is fully remote.
-              Every contribution is visible. And when Swiftgigs grows — the people who were
+              Every contribution is visible. And when Swiftgigs grows, the people who were
               here first will have earned the right to grow with it.
             </p>
           </div>
@@ -140,7 +140,7 @@ export default function CareersPage() {
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Not money. Something better.</h2>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
-              We can&apos;t pay you — yet. But here&apos;s what working with us actually gives you.
+              We can&apos;t pay you, yet. But here&apos;s what working with us actually gives you.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -168,7 +168,7 @@ export default function CareersPage() {
               Open Roles
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">Where you can contribute</h2>
-            <p className="text-muted-foreground mt-3">All roles are remote internships. No experience required — only curiosity and drive.</p>
+            <p className="text-muted-foreground mt-3">All roles are remote internships. No experience required, only curiosity and drive.</p>
           </div>
           <div className="space-y-5">
             {roles.map((role) => (
@@ -193,7 +193,7 @@ export default function CareersPage() {
                   {role.ideal}
                 </p>
                 <a
-                  href={`mailto:team@swiftgigs.com?subject=Internship Application: ${encodeURIComponent(role.title)}`}
+                  href={`mailto:support@swiftgigs.com.ng?subject=Internship Application: ${encodeURIComponent(role.title)}`}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition group"
                 >
                   Apply for this role

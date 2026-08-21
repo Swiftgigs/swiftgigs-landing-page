@@ -9,7 +9,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: '5 Everyday Tasks You Should Stop Doing Yourself',
   description:
-    'Your time is worth more than you think. Here are 5 common tasks Nigerians outsource to Swiftgigs workers — and why the math almost always works in your favour.',
+    'Your time is worth more than you think. Here are 5 common tasks Nigerians outsource to Swiftgigs workers, and why the math almost always works in your favour.',
   openGraph: {
     title: '5 Everyday Tasks You Should Stop Doing Yourself',
     description: '5 common tasks to delegate to Swiftgigs workers and reclaim your time.',
@@ -37,11 +37,11 @@ const articleJsonLd = {
 };
 
 const tasks = [
-  { num: '01', title: 'Weekly Grocery Runs', body: 'Supermarket trips can easily eat 2–3 hours of your weekend — factoring in travel, queuing, loading, and unpacking. Send a Swiftgigs errand runner with your shopping list instead. Specify exact brands, quantities, and budget, and come home to everything already delivered. Your Saturday afternoon belongs to you again.' },
+  { num: '01', title: 'Weekly Grocery Runs', body: 'Supermarket trips can easily eat 2–3 hours of your weekend, factoring in travel, queuing, loading, and unpacking. Send a Swiftgigs errand runner with your shopping list instead. Specify exact brands, quantities, and budget, and come home to everything already delivered. Your Saturday afternoon belongs to you again.' },
   { num: '02', title: 'Home Deep Cleaning', body: 'A thorough clean of a 3-bedroom apartment takes 4–6 hours of serious physical effort. That\'s half a Saturday gone, with nothing to show for your personal time. Our verified cleaning helpers tackle mops, scrubbing, dusting, and organising while you relax or run other errands. You come home to a spotless space without lifting a finger.' },
-  { num: '03', title: 'Office & Business Errands', body: 'Bank deposits, document submissions, bill payments, courier pickups — these tasks are individually simple but collectively eat hours out of a business owner\'s week. If your hourly contribution to your business is significant, every hour on an errand is money left on the table. Let a Swiftgigs runner handle the legwork while you focus on growing your business.' },
-  { num: '04', title: 'Airport & Bus Park Pickups', body: 'Lagos traffic is legendary — and unpredictable. Driving to pick up a parcel, a piece of equipment, or a visiting relative from a bus park or airport can mean losing 2–4 hours to gridlock. A Swiftgigs helper makes the trip while you stay productive, and updates you via WhatsApp throughout.' },
-  { num: '05', title: 'Moving & Packing Assistance', body: 'Whether you\'re relocating to a new apartment or just reorganising a room, moving heavy furniture and boxes is exhausting, time-consuming work that often results in sore muscles or worse — damaged items. Our moving assistants help you pack carefully, load efficiently, and unpack on the other side so you can settle in faster.' },
+  { num: '03', title: 'Office & Business Errands', body: 'Bank deposits, document submissions, bill payments, courier pickups, these tasks are individually simple but collectively eat hours out of a business owner\'s week. If your hourly contribution to your business is significant, every hour on an errand is money left on the table. Let a Swiftgigs runner handle the legwork while you focus on growing your business.' },
+  { num: '04', title: 'Airport & Bus Park Pickups', body: 'Lagos traffic is legendary, and unpredictable. Driving to pick up a parcel, a piece of equipment, or a visiting relative from a bus park or airport can mean losing 2–4 hours to gridlock. A Swiftgigs helper makes the trip while you stay productive, and updates you via WhatsApp throughout.' },
+  { num: '05', title: 'Moving & Packing Assistance', body: 'Whether you\'re relocating to a new apartment or just reorganising a room, moving heavy furniture and boxes is exhausting, time-consuming work that often results in sore muscles or worse, damaged items. Our moving assistants help you pack carefully, load efficiently, and unpack on the other side so you can settle in faster.' },
 ];
 
 export default function BlogPost2() {
@@ -77,7 +77,7 @@ export default function BlogPost2() {
           <AnimateIn variant="fade-up">
             <p>
               Your time is your most valuable resource. And yet, most of us spend hours every week on
-              tasks that we could easily hand off to someone else — often at a surprisingly affordable cost.
+              tasks that we could easily hand off to someone else, often at a surprisingly affordable cost.
             </p>
           </AnimateIn>
           <AnimateIn variant="fade-up">
@@ -89,12 +89,12 @@ export default function BlogPost2() {
           </AnimateIn>
           <AnimateIn variant="fade-up">
             <PullQuote>
-              Stop counting the cost of getting help — start counting the cost of not getting it.
+              Stop counting the cost of getting help, start counting the cost of not getting it.
             </PullQuote>
           </AnimateIn>
 
           <AnimateIn variant="fade-up">
-            <p>Here are five tasks Swiftgigs customers love delegating — and why it makes sense.</p>
+            <p>Here are five tasks Swiftgigs customers love delegating, and why it makes sense.</p>
           </AnimateIn>
 
           <div className="space-y-8 pt-4">
@@ -115,11 +115,11 @@ export default function BlogPost2() {
 
           <AnimateIn variant="fade-up">
             <StoryCard
-              name="Ibrahim S."
-              where="Lagos"
-              service="Errand Running"
-              quote="This is way easier than asking around for help. One message and it was handled."
-              detail="Bank run + courier pickup · Done in 2 hours"
+              name="Amos Lucky"
+              where="Closed beta"
+              service="Beta tester"
+              quote="Delegating through a chat I already use meant there was nothing to install and nothing to figure out."
+              detail="Closed beta · Errand flow tested end to end"
             />
           </AnimateIn>
 
@@ -137,7 +137,7 @@ export default function BlogPost2() {
           <AnimateIn variant="zoom-in">
             <div className="final-cta-card text-white rounded-3xl p-8 mt-6 text-center">
               <p className="text-lg font-bold mb-2">Start delegating today</p>
-              <p className="text-white/70 text-sm mb-5">Describe what you need — we&apos;ll find a verified helper near you in minutes.</p>
+              <p className="text-white/70 text-sm mb-5">Describe what you need, we&apos;ll find a verified helper near you in minutes.</p>
               <a href="/waitlist"
                 className="inline-flex items-center gap-2 bg-white text-primary hover:bg-white/90 font-bold rounded-full px-6 py-3 text-sm transition-colors">
                 <WhatsAppIcon className="w-4 h-4" />

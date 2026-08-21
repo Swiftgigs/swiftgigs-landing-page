@@ -5,15 +5,15 @@ import { AnimateIn } from '@/components/animate-in';
 import {
   Accordion, AccordionItem, AccordionTrigger, AccordionContent,
 } from '@/components/ui/accordion';
-import { CheckCircle, Shield, Menu, X, Star, ArrowRight, Sparkles, Wrench, ShoppingBag, Scissors, Truck, BadgeCheck, Timer, Lock, MapPin, ChevronDown, Check, ArrowLeft, Phone, Video as VideoIcon, Mic, Paperclip, MoreVertical, Play, Wifi, Signal, BatteryFull, Maximize2, Minimize2, HelpCircle } from 'lucide-react';
+import { CheckCircle, Shield, Menu, X, ArrowRight, Sparkles, Wrench, ShoppingBag, Scissors, Truck, BadgeCheck, Timer, Lock, MapPin, ChevronDown, Check, ArrowLeft, Phone, Video as VideoIcon, Mic, Paperclip, MoreVertical, Play, Wifi, Signal, BatteryFull, Maximize2, Minimize2, HelpCircle } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
+import { MetaIcon } from '@/components/meta-icon';
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, type Variants } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { howItWorksSteps, faqs } from '@/lib/site-content';
 
-const WHATSAPP_LINK = 'https://wa.me/1234567890?text=Hi%20Swiftgigs';
 
 const steps = howItWorksSteps;
 
@@ -54,16 +54,16 @@ const marqueeItems = [
 ];
 
 const stats = [
-  { value: '500+',    label: 'Tasks completed' },
-  { value: '50+',     label: 'Verified workers' },
-  { value: '4.9/5',   label: 'Average rating' },
-  { value: '< 10 min', label: 'Average match time' },
+  { value: '20',   label: 'Closed beta testers' },
+  { value: '7',    label: 'Service categories' },
+  { value: '100%', label: 'Escrow-protected' },
+  { value: '0',    label: 'Apps to download' },
 ];
 
 const testimonials = [
-  { quote: 'I needed someone urgently and got help within 30 minutes. The worker was polite and professional.', author: 'Chioma A.', where: 'Abuja' },
-  { quote: 'This is way easier than asking around for help. One message and it was handled.', author: 'Ibrahim S.', where: 'Lagos' },
-  { quote: 'I was skeptical about letting a stranger in, but the verification and escrow made me comfortable.', author: 'Ngozi E.', where: 'Port Harcourt' },
+  { quote: 'It is blazing fast. One message and the whole flow ran inside WhatsApp, so there was nothing new to learn.', author: 'Bola Opatudun', where: 'Closed beta tester' },
+  { quote: 'The product is lovely and easy to move around. My one ask was stronger identity checks, so putting NIN verification in before launch is the right call.', author: 'Abdulkareem Yakubu', where: 'Closed beta tester' },
+  { quote: 'Everything just dey happen for the same WhatsApp wey I dey open every day. E no hard at all, I no need download new app. Wow.', author: 'Aisha Omah', where: 'Closed beta tester' },
 ];
 
 const fadeUp: Variants = {
@@ -214,7 +214,7 @@ function WhatsAppChat() {
               <div className="min-w-0">
                 <p className="font-semibold truncate">Amaka O. · Cleaner</p>
                 <p className="text-[10.5px] text-black/50 flex items-center gap-1">
-                  <Star className="w-2.5 h-2.5 fill-amber-400 text-amber-400 shrink-0" /> 4.9 · 120 jobs · ID verified
+                  <BadgeCheck className="w-2.5 h-2.5 text-[#25D366] shrink-0" /> NIN verified · Guarantor checked
                 </p>
               </div>
               <p className="ml-auto font-bold shrink-0">₦4,500</p>
@@ -575,7 +575,7 @@ export function HomeClient() {
               <motion.p variants={fadeUp} initial="hidden" animate="show" custom={2}
                 className="text-base sm:text-lg text-foreground/60 leading-relaxed mb-7 sm:mb-9 max-w-md">
                 Swiftgigs connects you with vetted local workers for cleaning, errands,
-                repairs and more — matched in minutes, paid only when you&apos;re satisfied.
+                repairs and more. Matched in minutes, paid only when you&apos;re satisfied.
                 No app to download.
               </motion.p>
 
@@ -602,17 +602,13 @@ export function HomeClient() {
                 <div className="flex -space-x-2.5">
                   {['bg-primary/90', 'bg-emerald-500', 'bg-amber-400', 'bg-sky-500'].map((c, i) => (
                     <div key={i} className={`w-9 h-9 rounded-full ${c} border-[3px] border-background flex items-center justify-center text-white text-xs font-bold`}>
-                      {['C', 'I', 'N', 'T'][i]}
+                      {['B', 'A', 'P', 'N'][i]}
                     </div>
                   ))}
                 </div>
                 <div>
-                  <div className="flex gap-0.5 mb-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <p className="text-[13px] text-foreground/55 font-medium">4.9 from 500+ completed tasks</p>
+                  <p className="text-[13px] font-semibold leading-tight mb-0.5">Closed beta complete</p>
+                  <p className="text-[13px] text-foreground/55 font-medium leading-tight">Tested end to end with 20 users</p>
                 </div>
               </motion.div>
             </div>
@@ -712,7 +708,7 @@ export function HomeClient() {
                     <div>
                       <p className="text-base sm:text-lg text-foreground/60 leading-relaxed">
                         <span className="text-foreground/90 font-semibold">Swiftgigs is a WhatsApp-based platform that connects
-                        people across Nigeria to vetted local workers</span> for everyday tasks — cleaning, errands,
+                        people across Nigeria to vetted local workers</span> for everyday tasks like cleaning, errands,
                         deliveries, repairs and more. Instead of downloading another app or asking around
                         for help, you send one WhatsApp message and get matched with a trusted person
                         nearby, usually in minutes.
@@ -755,7 +751,7 @@ export function HomeClient() {
                   How does Swiftgigs work?
                 </h2>
                 <p className="text-lg text-foreground/60">
-                  Three steps, all inside WhatsApp — simple, fast, and reliable every time.
+                  Three steps, all inside WhatsApp. Simple, fast, and reliable every time.
                 </p>
               </AnimateIn>
 
@@ -781,7 +777,7 @@ export function HomeClient() {
                   <AnimateIn variant="fade-up" delay={380} className="mt-10 ml-5 sm:ml-[72px]">
                     <Link href="/waitlist"
                       className="inline-flex items-center gap-2 font-semibold text-primary hover:gap-3 transition-all">
-                      Join the waitlist — it takes 60 seconds
+                      Join the waitlist in 60 seconds
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </AnimateIn>
@@ -833,7 +829,7 @@ export function HomeClient() {
                       <h3 className="font-display font-bold text-2xl mb-2">Verified people, not strangers</h3>
                       <p className="text-foreground/60 leading-relaxed max-w-lg">
                         Every worker passes ID verification, guarantor checks and an in-person screening call
-                        before their first job — then keeps earning your trust through ratings.
+                        before their first job, then keeps earning your trust through ratings.
                       </p>
                     </div>
                   </div>
@@ -847,7 +843,7 @@ export function HomeClient() {
                     <div>
                       <h3 className="font-display font-bold text-2xl mb-2">No app needed</h3>
                       <p className="text-foreground/60 leading-relaxed">
-                        Runs entirely on WhatsApp — the app 90% of Nigeria already opens every day.
+                        Runs entirely on WhatsApp, the app 90% of Nigeria already opens every day.
                       </p>
                     </div>
                   </div>
@@ -859,7 +855,7 @@ export function HomeClient() {
                     <div>
                       <h3 className="font-display font-bold text-2xl mb-2">Honest pricing</h3>
                       <p className="text-foreground/60 leading-relaxed">
-                        Prices aren&apos;t fixed — you negotiate and agree the final price with your
+                        Prices aren&apos;t fixed. You negotiate and agree the final price with your
                         provider through Swiftgigs before the job starts. No hidden fees.
                       </p>
                     </div>
@@ -876,7 +872,7 @@ export function HomeClient() {
                     <div className="relative">
                       <h3 className="font-display font-bold text-2xl mb-2">Pay only when satisfied</h3>
                       <p className="text-white/55 leading-relaxed max-w-lg">
-                        Your money sits with us — not the worker — until you confirm the job is done
+                        Your money sits with us, not the worker, until you confirm the job is done
                         properly. If anything goes wrong, support steps in fast.
                       </p>
                     </div>
@@ -926,11 +922,11 @@ export function HomeClient() {
                     From &ldquo;I need help&rdquo;<br />to help at your door.
                   </h2>
                   <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-7 sm:mb-9 max-w-md">
-                    One message, a vetted match, secure payment, done —
+                    One message, a vetted match, secure payment, done.
                     all in the app you already use.
                   </p>
                   <div className="space-y-3.5 mb-10">
-                    {['Describe your task in plain language', 'Review your matched worker’s profile & rating', 'Confirm — payment stays protected until the job is done'].map((line, i) => (
+                    {['Describe your task in plain language', 'Review your matched worker’s profile & rating', 'Confirm, and payment stays protected until the job is done'].map((line, i) => (
                       <div key={i} className="flex items-start sm:items-center gap-3">
                         <span className="w-5 h-5 rounded-full bg-primary/30 border border-primary/50 flex items-center justify-center shrink-0">
                           <Check className="w-3 h-3 text-white" strokeWidth={3} />
@@ -977,12 +973,12 @@ export function HomeClient() {
                     Turn your skills into steady income
                   </h2>
                   <p className="text-lg text-foreground/60 mb-10 leading-relaxed max-w-md">
-                    Join Swiftgigs and start earning in your area — on your schedule, at your pace.
+                    Join Swiftgigs and start earning in your area, on your schedule, at your pace.
                   </p>
 
                   <div className="space-y-6 mb-10">
                     {[
-                      { title: 'Flexible work', desc: 'Work your own hours, your own way — accept only the jobs you want.' },
+                      { title: 'Flexible work', desc: 'Work your own hours, your own way. Accept only the jobs you want.' },
                       { title: 'Get paid fast', desc: 'Secure escrow payment released straight to you when the job is confirmed.' },
                       { title: 'Build a reputation', desc: 'Great work earns ratings; higher ratings earn you more and better jobs.' },
                     ].map((b, i) => (
@@ -1018,19 +1014,15 @@ export function HomeClient() {
                 <div>
                   <p className="text-sm font-semibold text-primary mb-3">Reviews</p>
                   <h2 className="font-display font-bold text-3xl md:text-[2.6rem] leading-[1.1] tracking-[-0.01em]">
-                    Is Swiftgigs safe to use?<br />
-                    <span className="text-foreground/40">Ask the people who use it.</span>
+                    What did our beta testers say?<br />
+                    <span className="text-foreground/40">Straight from the closed beta.</span>
                   </h2>
                 </div>
                 <div className="flex items-center gap-3 bg-card border border-border rounded-2xl px-5 py-4">
-                  <p className="font-display font-bold text-3xl">4.9</p>
+                  <p className="font-display font-bold text-3xl">20</p>
                   <div>
-                    <div className="flex gap-0.5 mb-0.5">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                      ))}
-                    </div>
-                    <p className="text-xs text-foreground/50 font-medium">500+ completed tasks</p>
+                    <p className="text-xs font-semibold leading-tight mb-0.5">Closed beta testers</p>
+                    <p className="text-xs text-foreground/50 font-medium leading-tight">Tested end to end</p>
                   </div>
                 </div>
               </AnimateIn>
@@ -1039,11 +1031,9 @@ export function HomeClient() {
                 {testimonials.map((t, idx) => (
                   <AnimateIn key={idx} variant="fade-up" delay={idx * 100}>
                     <figure className="bg-card border border-border rounded-3xl p-6 sm:p-8 h-full flex flex-col">
-                      <div className="flex gap-0.5 mb-6">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        ))}
-                      </div>
+                      <span className="self-start inline-flex items-center gap-1.5 rounded-full bg-primary/10 text-primary px-3 py-1 text-[11.5px] font-semibold mb-6">
+                        <BadgeCheck className="w-3.5 h-3.5" /> Closed beta feedback
+                      </span>
                       <blockquote className="text-[17px] leading-relaxed mb-8 flex-1">&ldquo;{t.quote}&rdquo;</blockquote>
                       <figcaption className="flex items-center gap-3">
                         <span className="w-10 h-10 rounded-full bg-primary/12 text-primary font-bold flex items-center justify-center">
@@ -1051,7 +1041,7 @@ export function HomeClient() {
                         </span>
                         <span>
                           <span className="block font-semibold text-sm">{t.author}</span>
-                          <span className="block text-xs text-foreground/50">{t.where} · Verified customer</span>
+                          <span className="block text-xs text-foreground/50">{t.where}</span>
                         </span>
                       </figcaption>
                     </figure>
@@ -1088,9 +1078,9 @@ export function HomeClient() {
                 <p className="text-foreground/55 leading-relaxed mb-6">
                   Everything you need to know about getting help through Swiftgigs.
                 </p>
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"
+                <a href="/waitlist"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
-                  Still curious? Ask us directly <ArrowRight className="w-4 h-4" />
+                  Still curious? Join the waitlist <ArrowRight className="w-4 h-4" />
                 </a>
               </AnimateIn>
 
@@ -1173,12 +1163,12 @@ export function HomeClient() {
                 <div className="col-span-2 md:col-span-1">
                   <p className="font-display font-bold text-xl mb-3">Swiftgigs</p>
                   <p className="text-sm text-white/50 leading-relaxed max-w-[16rem] mb-6">
-                    Vetted local help for everyday tasks — all on WhatsApp. Available across Nigeria.
+                    Vetted local help for everyday tasks, all on WhatsApp. Available across Nigeria.
                   </p>
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"
+                  <a href="/waitlist"
                     className="inline-flex items-center gap-2 bg-white/[0.07] hover:bg-white/[0.12] border border-white/10 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors">
                     <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-                    Chat with us
+                    Join the waitlist
                   </a>
                 </div>
                 <div>
@@ -1199,19 +1189,28 @@ export function HomeClient() {
                 <div className="col-span-2 sm:col-span-1 md:col-span-1">
                   <h4 className="font-semibold mb-4 text-white/40 text-[13px] uppercase tracking-wider">Contact</h4>
                   <ul className="space-y-3 text-[15px] text-white/65">
-                    <li><a href="https://wa.me/1234567890" className="hover:text-white transition">WhatsApp</a></li>
-                    <li><a href="mailto:support@swiftgigs.com" className="hover:text-white transition">Email</a></li>
+                    <li><a href="/waitlist" className="hover:text-white transition">Waitlist</a></li>
+                    <li><a href="mailto:support@swiftgigs.com.ng" className="hover:text-white transition">Email</a></li>
                   </ul>
                 </div>
               </div>
 
-              <div className="flex justify-center md:justify-start mb-6">
+              <div className="flex flex-wrap justify-center md:justify-start gap-2.5 mb-6">
                 <span className="inline-flex items-center gap-3 bg-white/[0.06] border border-white/10 rounded-full pl-1.5 pr-5 py-1.5">
                   <Image src="/cac-logo.png" alt="Corporate Affairs Commission (CAC) Nigeria seal" width={585} height={579}
                     className="h-9 w-9 rounded-full bg-white object-contain" />
                   <span className="text-left leading-tight">
                     <span className="block text-[12.5px] font-semibold text-white/85">CAC Registered Business</span>
                     <span className="block text-[11px] text-white/45">Corporate Affairs Commission · Nigeria</span>
+                  </span>
+                </span>
+                <span className="inline-flex items-center gap-3 bg-white/[0.06] border border-white/10 rounded-full pl-1.5 pr-5 py-1.5">
+                  <span className="h-9 w-9 rounded-full bg-white flex items-center justify-center shrink-0">
+                    <MetaIcon className="w-[22px] h-auto" />
+                  </span>
+                  <span className="text-left leading-tight">
+                    <span className="block text-[12.5px] font-semibold text-white/85">Meta Verified Business</span>
+                    <span className="block text-[11px] text-white/45">Business verified by Meta</span>
                   </span>
                 </span>
               </div>

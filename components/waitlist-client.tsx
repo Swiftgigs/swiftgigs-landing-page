@@ -5,8 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import {
-  ArrowLeft, ArrowRight, Mail, Wallet, Timer, Star,
-  PartyPopper, Loader2,
+  ArrowLeft, ArrowRight, Mail, Wallet, Timer, PartyPopper, Loader2,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
@@ -51,7 +50,7 @@ async function submitToGoogleForm(method: Method, value: string) {
 
 type Method = 'whatsapp' | 'email';
 
-type Entry = { method: Method; value: string; position: number };
+type Entry = { method: Method; value: string };
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -74,7 +73,7 @@ function validate(method: Method, value: string): string | null {
   const v = value.trim();
   if (!v) return method === 'email' ? 'Please enter your email address.' : 'Please enter your WhatsApp number.';
   if (method === 'email') {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? null : 'That email doesn’t look right — mind checking it?';
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? null : 'That email doesn’t look right, mind checking it?';
   }
   const digits = v.replace(/[\s\-()]/g, '');
   return /^\+?\d{10,14}$/.test(digits) ? null : 'Enter a valid WhatsApp number, e.g. 0803 123 4567.';
@@ -115,7 +114,6 @@ export function WaitlistClient() {
     const saved: Entry = {
       method,
       value: value.trim(),
-      position: 500 + Math.floor(Math.random() * 140),
     };
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
@@ -192,7 +190,7 @@ export function WaitlistClient() {
           <motion.p variants={fadeUp} initial="hidden" animate="show" custom={2}
             className="text-base sm:text-lg text-foreground/60 leading-relaxed mb-7 sm:mb-9 max-w-md mx-auto">
             Join the worker waitlist and we&apos;ll message you the moment onboarding
-            opens in your area — flexible jobs, escrow-protected pay, all on WhatsApp.
+            opens in your area: flexible jobs, escrow-protected pay, all on WhatsApp.
           </motion.p>
 
           {/* ── Form / success card ── */}
@@ -212,17 +210,17 @@ export function WaitlistClient() {
                     </span>
                     <div>
                       <p className="font-display font-bold text-lg leading-tight">You&apos;re on the list! 🎉</p>
-                      <p className="text-[13px] text-foreground/55">Spot <span className="font-semibold text-primary">#{entry.position}</span> · we&apos;ll reach you at <span className="font-semibold text-foreground/80 break-all">{entry.value}</span></p>
+                      <p className="text-[13px] text-foreground/55">We&apos;ll reach you at <span className="font-semibold text-foreground/80 break-all">{entry.value}</span></p>
                     </div>
                   </div>
                   <p className="text-sm text-foreground/60 leading-relaxed mb-5">
                     We&apos;ll send one message when worker onboarding opens in your
-                    area — no spam, ever. Want to start sooner?
+                    area. No spam, ever. Want to start sooner?
                   </p>
-                  <a href="https://wa.me/1234567890?text=Hi%20Swiftgigs" target="_blank" rel="noopener noreferrer">
+                  <a href="/waitlist">
                     <Button className="bg-primary hover:bg-primary/90 text-white rounded-full w-full font-semibold h-11">
                       <WhatsAppIcon className="w-4 h-4 mr-1.5" />
-                      Chat with us on WhatsApp
+                      Message us on WhatsApp at launch
                     </Button>
                   </a>
                 </motion.div>
@@ -311,17 +309,13 @@ export function WaitlistClient() {
             <div className="flex -space-x-2.5">
               {['bg-primary/90', 'bg-emerald-500', 'bg-amber-400', 'bg-sky-500'].map((c, i) => (
                 <div key={i} className={`w-9 h-9 rounded-full ${c} border-[3px] border-background flex items-center justify-center text-white text-xs font-bold`}>
-                  {['C', 'I', 'N', 'T'][i]}
+                  {['B', 'A', 'P', 'N'][i]}
                 </div>
               ))}
             </div>
             <div className="text-left">
-              <div className="flex gap-0.5 mb-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              <p className="text-[13px] text-foreground/55 font-medium">500+ workers already in line</p>
+              <p className="text-[13px] font-semibold leading-tight mb-0.5">Closed beta complete</p>
+              <p className="text-[13px] text-foreground/55 font-medium leading-tight">Now onboarding our first workers</p>
             </div>
           </motion.div>
         </div>
