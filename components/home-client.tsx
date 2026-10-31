@@ -5,7 +5,7 @@ import { AnimateIn } from '@/components/animate-in';
 import {
   Accordion, AccordionItem, AccordionTrigger, AccordionContent,
 } from '@/components/ui/accordion';
-import { CheckCircle, Shield, Menu, X, ArrowRight, Sparkles, Wrench, ShoppingBag, Scissors, Truck, BadgeCheck, Timer, Lock, MapPin, ChevronDown, Check, ArrowLeft, Phone, Video as VideoIcon, Mic, Paperclip, MoreVertical, Play, Wifi, Signal, BatteryFull, Maximize2, Minimize2, HelpCircle } from 'lucide-react';
+import { CheckCircle, Shield, Menu, X, ArrowRight, Sparkles, Wrench, ShoppingBag, Scissors, Truck, BadgeCheck, Timer, Lock, MapPin, ChevronDown, Check, ArrowLeft, Phone, Video as VideoIcon, Mic, Paperclip, MoreVertical, Play, Wifi, Signal, BatteryFull, Maximize2, Minimize2, HelpCircle, ArrowUpRight } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { MetaIcon } from '@/components/meta-icon';
 import { useEffect, useRef, useState } from 'react';
@@ -1072,27 +1072,32 @@ export function HomeClient() {
           </section>
 
           {/* ── From the blog ── */}
-          <section aria-label="From the blog" className="px-4 sm:px-6 pb-4 md:pb-8">
+          <section aria-label="From the blog" className="px-4 sm:px-6 py-14 sm:py-16 md:py-24">
             <div className="max-w-6xl mx-auto">
-              <div className="flex items-baseline justify-between pb-3 border-b border-border">
+              <div className="flex items-baseline justify-between gap-4 pb-4 mb-6 border-b border-border">
                 <h2 className="font-display font-bold text-2xl">From the blog</h2>
                 <Link href="/blog" className="text-sm font-semibold text-primary hover:underline underline-offset-4">All articles</Link>
               </div>
-              <ul className="grid md:grid-cols-3 gap-x-8">
+              <ul className="grid md:grid-cols-3 gap-4">
                 {[
                   { href: '/blog/getting-started-with-swiftgigs', tag: 'Guide', title: 'Your first Swiftgigs experience: what to expect' },
                   { href: '/blog/tasks-to-delegate', tag: 'Productivity', title: '5 everyday tasks you should stop doing yourself' },
                   { href: '/blog/making-help-accessible-in-nigeria', tag: 'Company', title: 'Making everyday help more accessible in Nigeria' },
                 ].map((post) => (
-                  <li key={post.href} className="border-b border-border">
-                    <Link href={post.href} className="group block py-5">
-                      <span className="block text-xs font-semibold text-primary mb-1">{post.tag}</span>
-                      <span className="block font-display font-bold text-lg leading-snug group-hover:text-primary transition-colors">{post.title}</span>
+                  <li key={post.href}>
+                    <Link href={post.href} className="group flex h-full items-start gap-4 rounded-2xl border border-border bg-card p-5 sm:p-6 hover:border-primary/40 hover:shadow-[0_18px_40px_-26px_rgba(32,22,48,0.3)] hover:-translate-y-0.5 transition-all duration-300">
+                      <span className="flex-1 min-w-0">
+                        <span className="block text-xs font-semibold text-primary mb-2">{post.tag}</span>
+                        <span className="block font-display font-bold text-lg leading-snug group-hover:text-primary transition-colors">{post.title}</span>
+                      </span>
+                      <span className="shrink-0 size-9 rounded-full bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                        <ArrowUpRight className="w-4 h-4" />
+                      </span>
                     </Link>
                   </li>
                 ))}
               </ul>
-              <p className="mt-5 text-sm text-foreground/55">
+              <p className="mt-6 text-sm text-foreground/55">
                 Curious who is behind it? <Link href="/about" className="font-semibold text-primary hover:underline underline-offset-4">Meet the founder</Link>.
               </p>
             </div>
