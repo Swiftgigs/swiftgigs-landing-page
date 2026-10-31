@@ -99,6 +99,7 @@ export function PageFooter() {
             <ul className="space-y-3 text-[15px] text-white/65">
               <li><Link href="/terms" className="hover:text-white transition">Terms &amp; Conditions</Link></li>
               <li><Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link></li>
+              <li><Link href="/data-deletion" className="hover:text-white transition">Data Deletion</Link></li>
             </ul>
           </div>
           <div className="col-span-2 sm:col-span-1 md:col-span-1">

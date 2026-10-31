@@ -1184,6 +1184,7 @@ export function HomeClient() {
                   <ul className="space-y-3 text-[15px] text-white/65">
                     <li><a href="/terms" className="hover:text-white transition">Terms &amp; Conditions</a></li>
                     <li><a href="/privacy" className="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="/data-deletion" className="hover:text-white transition">Data Deletion</a></li>
                   </ul>
                 </div>
                 <div className="col-span-2 sm:col-span-1 md:col-span-1">

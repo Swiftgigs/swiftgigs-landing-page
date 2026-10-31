@@ -16,5 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/careers`,   lastModified, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${BASE}/terms`,     lastModified, changeFrequency: 'yearly',  priority: 0.3 },
     { url: `${BASE}/privacy`,   lastModified, changeFrequency: 'yearly',  priority: 0.3 },
+    { url: `${BASE}/data-deletion`, lastModified, changeFrequency: 'yearly', priority: 0.3 },
   ];
 }

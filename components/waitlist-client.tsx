@@ -330,7 +330,8 @@ export function WaitlistClient() {
       <p className="relative text-center text-[12px] text-foreground/40 pb-5 px-4">
         &copy; 2026 Swiftgigs Technologies LTD ·{' '}
         <Link href="/terms" className="hover:text-foreground/70 transition-colors">Terms</Link> ·{' '}
-        <Link href="/privacy" className="hover:text-foreground/70 transition-colors">Privacy</Link>
+        <Link href="/privacy" className="hover:text-foreground/70 transition-colors">Privacy</Link> ·{' '}
+        <Link href="/data-deletion" className="hover:text-foreground/70 transition-colors">Data Deletion</Link>
       </p>
     </div>
   );
