@@ -6,7 +6,7 @@ import { faqs, howItWorksSteps } from '@/lib/site-content';
 export const metadata: Metadata = {
   title: 'Swiftgigs | On-Demand Local Help via WhatsApp, Nigeria',
   description:
-    'Swiftgigs is Nigeria’s WhatsApp-based platform for on-demand local help, available nationwide. Message us for cleaning, errands, deliveries & repairs get matched with a vetted worker in minutes. No app needed.',
+    'Swiftgigs is Nigeria’s WhatsApp-based platform for on-demand local help, for cleaning, errands, deliveries, repairs & more. Message us, pick a verified worker near you, and pay through escrow. No app needed.',
   keywords: [
     'on-demand tasks Nigeria',
     'task marketplace Lagos',
@@ -57,6 +57,8 @@ const organizationJsonLd = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
+    telephone: '+234-814-273-6424',
+    email: 'support@swiftgigs.com.ng',
     availableLanguage: 'English',
   },
   hasOfferCatalog: {
@@ -90,7 +92,7 @@ const howToJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: 'How to get local help through Swiftgigs',
-  description: 'Book a vetted local worker in Nigeria using only WhatsApp.',
+  description: 'Book an identity-verified local worker in Nigeria using only WhatsApp.',
   step: howItWorksSteps.map((s, i) => ({
     '@type': 'HowToStep',
     position: i + 1,

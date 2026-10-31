@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { PageNav, PageFooter } from '@/components/page-nav';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
+import { WHATSAPP_LINK, WHATSAPP_DISPLAY } from '@/lib/site-config';
 import { CheckCircle, Mail, Trash2, Clock, ShieldCheck, ListOrdered, Info } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -115,13 +116,15 @@ export default function DataDeletionPage() {
               </div>
             </a>
             <a
-              href="/waitlist"
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-3 bg-card border border-border rounded-xl p-4 hover:border-primary/40 transition group"
             >
               <WhatsAppIcon className="w-5 h-5 text-primary shrink-0" />
               <div>
                 <p className="text-sm font-semibold group-hover:text-primary transition">WhatsApp Support</p>
-                <p className="text-xs text-muted-foreground">Fastest response time</p>
+                <p className="text-xs text-muted-foreground">{WHATSAPP_DISPLAY} · Fastest response time</p>
               </div>
             </a>
           </div>

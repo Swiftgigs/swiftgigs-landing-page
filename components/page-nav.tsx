@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
 import { MetaIcon } from '@/components/meta-icon';
+import { WHATSAPP_LINK } from '@/lib/site-config';
 import { Button } from '@/components/ui/button';
 
 
@@ -78,7 +79,7 @@ export function PageFooter() {
           <div className="col-span-2 md:col-span-1">
             <p className="font-display font-bold text-xl mb-3">Swiftgigs</p>
             <p className="text-sm text-white/50 leading-relaxed max-w-[16rem] mb-6">
-              Vetted local help for everyday tasks, all on WhatsApp. Available across Nigeria.
+              Verified local help for everyday tasks, all on WhatsApp.
             </p>
             <a href="/waitlist"
               className="inline-flex items-center gap-2 bg-white/[0.07] hover:bg-white/[0.12] border border-white/10 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors">
@@ -106,6 +107,7 @@ export function PageFooter() {
             <h4 className="font-semibold mb-4 text-white/40 text-[13px] uppercase tracking-wider">Contact</h4>
             <ul className="space-y-3 text-[15px] text-white/65">
               <li><a href="/waitlist" className="hover:text-white transition">Waitlist</a></li>
+              <li><a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">WhatsApp</a></li>
               <li><a href="mailto:support@swiftgigs.com.ng" className="hover:text-white transition">Email</a></li>
             </ul>
           </div>

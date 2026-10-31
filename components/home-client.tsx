@@ -13,6 +13,7 @@ import { motion, AnimatePresence, useScroll, useTransform, type Variants } from 
 import Image from 'next/image';
 import Link from 'next/link';
 import { howItWorksSteps, faqs } from '@/lib/site-content';
+import { WHATSAPP_LINK } from '@/lib/site-config';
 
 
 const steps = howItWorksSteps;
@@ -47,15 +48,15 @@ const WA = {
 const marqueeItems = [
   { icon: Sparkles,    label: 'House Cleaning' },
   { icon: ShoppingBag, label: 'Errand Running' },
-  { icon: Wrench,      label: 'Quick Repairs' },
+  { icon: Wrench,      label: 'Home & Appliance Repairs' },
   { icon: Truck,       label: 'Moving & Delivery' },
   { icon: Scissors,    label: 'Beauty at Home' },
-  { icon: WhatsAppIcon, label: 'Personal Help' },
+  { icon: WhatsAppIcon, label: 'Food, Laundry & More' },
 ];
 
 const stats = [
   { value: '20',   label: 'Closed beta testers' },
-  { value: '7',    label: 'Service categories' },
+  { value: '15',   label: 'Service categories' },
   { value: '100%', label: 'Escrow-protected' },
   { value: '0',    label: 'Apps to download' },
 ];
@@ -214,12 +215,12 @@ function WhatsAppChat() {
               <div className="min-w-0">
                 <p className="font-semibold truncate">Amaka O. · Cleaner</p>
                 <p className="text-[10.5px] text-black/50 flex items-center gap-1">
-                  <BadgeCheck className="w-2.5 h-2.5 text-[#25D366] shrink-0" /> NIN verified · Guarantor checked
+                  <BadgeCheck className="w-2.5 h-2.5 text-[#25D366] shrink-0" /> Identity &amp; payout verified
                 </p>
               </div>
               <p className="ml-auto font-bold shrink-0">₦4,500</p>
             </div>
-            <p className="text-black/70">Pay now to confirm this job. Your worker gets paid <span className="font-semibold text-black/80">after you confirm the work done</span>. Only pay through Swiftgigs for safety and easy refund.</p>
+            <p className="text-black/70">Pay now to confirm this job. Your worker gets paid <span className="font-semibold text-black/80">after you confirm the work done</span>. Only pay through Swiftgigs so your payment stays protected.</p>
             <p className="text-right text-[9px] text-black/35 mt-1">2:16 PM</p>
           </div>
           <WAButtonRow label="Pay Now" />
@@ -562,7 +563,7 @@ export function HomeClient() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                 </span>
-                Available nationwide 🇳🇬
+                Built for Nigeria 🇳🇬
               </motion.div>
 
               <motion.h1 variants={fadeUp} initial="hidden" animate="show" custom={1}
@@ -574,9 +575,9 @@ export function HomeClient() {
 
               <motion.p variants={fadeUp} initial="hidden" animate="show" custom={2}
                 className="text-base sm:text-lg text-foreground/60 leading-relaxed mb-7 sm:mb-9 max-w-md">
-                Swiftgigs connects you with vetted local workers for cleaning, errands,
-                repairs and more. Matched in minutes, paid only when you&apos;re satisfied.
-                No app to download.
+                Swiftgigs connects you with identity-verified local workers for cleaning,
+                errands, repairs and more. Pick someone nearby, agree the price, and your
+                money stays in escrow until the job is done. No app to download.
               </motion.p>
 
               <motion.div variants={fadeUp} initial="hidden" animate="show" custom={3}
@@ -631,7 +632,7 @@ export function HomeClient() {
                 </div>
                 <div className="leading-tight">
                   <p className="text-[12.5px] font-semibold text-zinc-900">Worker verified</p>
-                  <p className="text-[11px] text-zinc-500">ID &amp; guarantor checked</p>
+                  <p className="text-[11px] text-zinc-500">NIN &amp; payout account checked</p>
                 </div>
               </FloatChip>
 
@@ -640,8 +641,8 @@ export function HomeClient() {
                   <Timer className="w-4.5 h-4.5 text-primary" />
                 </div>
                 <div className="leading-tight">
-                  <p className="text-[12.5px] font-semibold text-zinc-900">Matched in 6 min</p>
-                  <p className="text-[11px] text-zinc-500">Average under 10</p>
+                  <p className="text-[12.5px] font-semibold text-zinc-900">Nearby first</p>
+                  <p className="text-[11px] text-zinc-500">Within 50 km, then wider</p>
                 </div>
               </FloatChip>
 
@@ -651,7 +652,7 @@ export function HomeClient() {
                   <BadgeCheck className="w-3.5 h-3.5 text-emerald-600" /> Worker verified
                 </span>
                 <span className="inline-flex items-center gap-1.5 bg-card border border-border rounded-full px-3.5 py-2 text-[12px] font-semibold text-foreground/75">
-                  <Timer className="w-3.5 h-3.5 text-primary" /> Matched in minutes
+                  <Timer className="w-3.5 h-3.5 text-primary" /> Nearby workers first
                 </span>
               </div>
             </motion.div>
@@ -708,16 +709,16 @@ export function HomeClient() {
                     <div>
                       <p className="text-base sm:text-lg text-foreground/60 leading-relaxed">
                         <span className="text-foreground/90 font-semibold">Swiftgigs is a WhatsApp-based platform that connects
-                        people across Nigeria to vetted local workers</span> for everyday tasks like cleaning, errands,
+                        people across Nigeria to identity-verified local workers</span> for everyday tasks like cleaning, errands,
                         deliveries, repairs and more. Instead of downloading another app or asking around
-                        for help, you send one WhatsApp message and get matched with a trusted person
-                        nearby, usually in minutes.
+                        for help, you send one WhatsApp message, choose a worker near you from the
+                        list, and agree the price in the chat.
                       </p>
                       <div className="mt-6 flex flex-wrap gap-2">
                         {[
                           { icon: WhatsAppIcon, label: 'WhatsApp-first' },
-                          { icon: BadgeCheck, label: 'Vetted workers' },
-                          { icon: Timer, label: 'Matched in minutes' },
+                          { icon: BadgeCheck, label: 'Verified workers' },
+                          { icon: Timer, label: 'Nearby workers first' },
                         ].map(({ icon: Icon, label }) => (
                           <span key={label} className="inline-flex items-center gap-2 rounded-full border border-primary/10 bg-background/75 px-3 py-2 text-xs sm:text-[13px] font-semibold text-foreground/70 backdrop-blur">
                             <Icon className="size-3.5 text-primary" /> {label}
@@ -828,8 +829,9 @@ export function HomeClient() {
                     <div>
                       <h3 className="font-display font-bold text-2xl mb-2">Verified people, not strangers</h3>
                       <p className="text-foreground/60 leading-relaxed max-w-lg">
-                        Every worker passes ID verification, guarantor checks and an in-person screening call
-                        before their first job, then keeps earning your trust through ratings.
+                        Before a worker's first job, we check their NIN against government records and match
+                        it to the name on their payout bank account. You see their official record photo, and
+                        contact details are shared only once payment is in escrow and both sides are verified.
                       </p>
                     </div>
                   </div>
@@ -843,7 +845,7 @@ export function HomeClient() {
                     <div>
                       <h3 className="font-display font-bold text-2xl mb-2">No app needed</h3>
                       <p className="text-foreground/60 leading-relaxed">
-                        Runs entirely on WhatsApp, the app 90% of Nigeria already opens every day.
+                        Runs entirely on WhatsApp, the app most people in Nigeria already open every day.
                       </p>
                     </div>
                   </div>
@@ -851,12 +853,13 @@ export function HomeClient() {
 
                 <AnimateIn variant="fade-up" delay={60}>
                   <div className="h-full rounded-3xl bg-muted/70 border border-border p-6 sm:p-8 flex flex-col justify-between min-h-[230px] sm:min-h-[260px]">
-                    <p className="font-display font-bold text-4xl tracking-tight">₦1,000<span className="text-foreground/40 text-xl font-semibold">+</span></p>
+                    <p className="font-display font-bold text-4xl tracking-tight">10%<span className="text-foreground/40 text-xl font-semibold"> fee</span></p>
                     <div>
-                      <h3 className="font-display font-bold text-2xl mb-2">Honest pricing</h3>
+                      <h3 className="font-display font-bold text-2xl mb-2">Clear pricing</h3>
                       <p className="text-foreground/60 leading-relaxed">
                         Prices aren&apos;t fixed. You negotiate and agree the final price with your
-                        provider through Swiftgigs before the job starts. No hidden fees.
+                        provider through Swiftgigs before the job starts. Swiftgigs takes a 10% commission,
+                        capped at ₦10,000, from the worker's payout.
                       </p>
                     </div>
                   </div>
@@ -872,8 +875,9 @@ export function HomeClient() {
                     <div className="relative">
                       <h3 className="font-display font-bold text-2xl mb-2">Pay only when satisfied</h3>
                       <p className="text-white/55 leading-relaxed max-w-lg">
-                        Your money sits with us, not the worker, until you confirm the job is done
-                        properly. If anything goes wrong, support steps in fast.
+                        Your money sits in escrow, not with the worker, until you confirm the job is done.
+                        If you don't respond, it is released automatically after 3 hours. If something goes
+                        wrong, raise a dispute and a customer care agent reviews both sides' evidence.
                       </p>
                     </div>
                   </div>
@@ -922,11 +926,11 @@ export function HomeClient() {
                     From &ldquo;I need help&rdquo;<br />to help at your door.
                   </h2>
                   <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-7 sm:mb-9 max-w-md">
-                    One message, a vetted match, secure payment, done.
+                    One message, a verified worker, secure payment, done.
                     all in the app you already use.
                   </p>
                   <div className="space-y-3.5 mb-10">
-                    {['Describe your task in plain language', 'Review your matched worker’s profile & rating', 'Confirm, and payment stays protected until the job is done'].map((line, i) => (
+                    {['Describe your task in plain language', 'Pick a verified worker near you, with their rating', 'Confirm, and payment stays protected until the job is done'].map((line, i) => (
                       <div key={i} className="flex items-start sm:items-center gap-3">
                         <span className="w-5 h-5 rounded-full bg-primary/30 border border-primary/50 flex items-center justify-center shrink-0">
                           <Check className="w-3 h-3 text-white" strokeWidth={3} />
@@ -1052,9 +1056,9 @@ export function HomeClient() {
               <AnimateIn variant="fade-up" delay={150}>
                 <div className="mt-4 rounded-3xl bg-card border border-border px-6 sm:px-8 py-6 grid sm:grid-cols-2 lg:flex lg:flex-wrap items-center gap-x-10 gap-y-4">
                   {[
-                    { icon: BadgeCheck, label: 'Workers screened before onboarding' },
+                    { icon: BadgeCheck, label: 'NIN & payout account verified' },
                     { icon: Lock,       label: 'Escrow-protected payments' },
-                    { icon: Shield,     label: 'Support on every single job' },
+                    { icon: Shield,     label: 'Meeting code & door check' },
                     { icon: MapPin,     label: 'Local, nearby workers' },
                   ].map(({ icon: Icon, label }) => (
                     <span key={label} className="flex items-center gap-2.5 text-[13.5px] font-medium text-foreground/65">
@@ -1064,6 +1068,33 @@ export function HomeClient() {
                   ))}
                 </div>
               </AnimateIn>
+            </div>
+          </section>
+
+          {/* ── From the blog ── */}
+          <section aria-label="From the blog" className="px-4 sm:px-6 pb-4 md:pb-8">
+            <div className="max-w-6xl mx-auto">
+              <div className="flex items-baseline justify-between pb-3 border-b border-border">
+                <h2 className="font-display font-bold text-2xl">From the blog</h2>
+                <Link href="/blog" className="text-sm font-semibold text-primary hover:underline underline-offset-4">All articles</Link>
+              </div>
+              <ul className="grid md:grid-cols-3 gap-x-8">
+                {[
+                  { href: '/blog/getting-started-with-swiftgigs', tag: 'Guide', title: 'Your first Swiftgigs experience: what to expect' },
+                  { href: '/blog/tasks-to-delegate', tag: 'Productivity', title: '5 everyday tasks you should stop doing yourself' },
+                  { href: '/blog/making-help-accessible-in-nigeria', tag: 'Company', title: 'Making everyday help more accessible in Nigeria' },
+                ].map((post) => (
+                  <li key={post.href} className="border-b border-border">
+                    <Link href={post.href} className="group block py-5">
+                      <span className="block text-xs font-semibold text-primary mb-1">{post.tag}</span>
+                      <span className="block font-display font-bold text-lg leading-snug group-hover:text-primary transition-colors">{post.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 text-sm text-foreground/55">
+                Curious who is behind it? <Link href="/about" className="font-semibold text-primary hover:underline underline-offset-4">Meet the founder</Link>.
+              </p>
             </div>
           </section>
 
@@ -1163,7 +1194,7 @@ export function HomeClient() {
                 <div className="col-span-2 md:col-span-1">
                   <p className="font-display font-bold text-xl mb-3">Swiftgigs</p>
                   <p className="text-sm text-white/50 leading-relaxed max-w-[16rem] mb-6">
-                    Vetted local help for everyday tasks, all on WhatsApp. Available across Nigeria.
+                    Verified local help for everyday tasks, all on WhatsApp.
                   </p>
                   <a href="/waitlist"
                     className="inline-flex items-center gap-2 bg-white/[0.07] hover:bg-white/[0.12] border border-white/10 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors">
@@ -1191,6 +1222,7 @@ export function HomeClient() {
                   <h4 className="font-semibold mb-4 text-white/40 text-[13px] uppercase tracking-wider">Contact</h4>
                   <ul className="space-y-3 text-[15px] text-white/65">
                     <li><a href="/waitlist" className="hover:text-white transition">Waitlist</a></li>
+                    <li><a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">WhatsApp</a></li>
                     <li><a href="mailto:support@swiftgigs.com.ng" className="hover:text-white transition">Email</a></li>
                   </ul>
                 </div>

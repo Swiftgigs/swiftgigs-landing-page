@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 import { PageNav, PageFooter } from '@/components/page-nav';
 import { AnimateIn } from '@/components/animate-in';
-import { Clock, ArrowRight, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
-import { PostBanner, PullQuote, StoryCard } from '@/components/blog-visuals';
-import Link from 'next/link';
+import { PullQuote, StoryCard } from '@/components/blog-visuals';
+import { PostHeader, PostDeck, MoreFromBlog, NumberedList } from '@/components/blog-layout';
 
 export const metadata: Metadata = {
   title: 'Your First Swiftgigs Experience: What to Expect',
   description:
-    'New to Swiftgigs? Here\'s exactly what happens from your first WhatsApp message to a completed task, step by step, with tips for a great first experience.',
+    'New to Swiftgigs? Whether you need a quick repair or want local gigs, here\'s exactly what happens from your first WhatsApp message to a completed task, step by step.',
   openGraph: {
     title: 'Your First Swiftgigs Experience: What to Expect',
     description: 'Step-by-step guide to your first Swiftgigs task, no surprises.',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: 'https://swiftgigs.com.ng/blog/getting-started-with-swiftgigs' },
   other: {
-    'article:published_time': '2025-04-15',
+    'article:published_time': '2026-05-04',
     'article:author': 'Swiftgigs',
     'article:section': 'Guide',
   },
@@ -33,82 +33,53 @@ const articleJsonLd = {
   url: 'https://swiftgigs.com.ng/blog/getting-started-with-swiftgigs',
   author: { '@type': 'Organization', name: 'Swiftgigs', url: 'https://swiftgigs.com.ng' },
   step: [
-    { '@type': 'HowToStep', name: 'Send a WhatsApp message', text: 'Message Swiftgigs on WhatsApp with a description of your task.' },
-    { '@type': 'HowToStep', name: 'Get matched',             text: 'We match you with a verified nearby worker in minutes.' },
-    { '@type': 'HowToStep', name: 'Review and confirm',      text: 'Review the worker profile and confirm the price.' },
-    { '@type': 'HowToStep', name: 'Task gets done',          text: 'The worker arrives and completes your task.' },
-    { '@type': 'HowToStep', name: 'Confirm and pay',         text: 'Confirm satisfaction and release payment through escrow.' },
+    { '@type': 'HowToStep', name: 'Describe your task', text: 'Message Swiftgigs on WhatsApp, pick a category, share your location and describe the task.' },
+    { '@type': 'HowToStep', name: 'Choose a worker',          text: 'Pick a worker near you from the list.' },
+    { '@type': 'HowToStep', name: 'Agree the price and pay',  text: 'Agree the price with the worker and pay into escrow.' },
+    { '@type': 'HowToStep', name: 'Verify and meet',          text: 'Share the meeting code when the worker arrives and complete the task.' },
+    { '@type': 'HowToStep', name: 'Confirm and pay',         text: 'Confirm the job and release payment from escrow, then rate each other.' },
   ],
 };
 
 const steps = [
-  { num: '01', title: 'Send Us a Message on WhatsApp',  body: 'Head to our WhatsApp number and tap to start a chat. Tell us what you need in plain language, "I need someone to deep-clean my 2-bedroom apartment in Lekki tomorrow morning" or "I need an errand runner for 2 hours in Ikeja on Friday afternoon." No forms. No templates. Just talk to us like a person.' },
-  { num: '02', title: 'We Find Your Match',             body: 'Within minutes, our team reviews your request and matches you with a verified worker near your location. We factor in proximity, skill level, availability, and customer ratings, so you always get someone well-suited for your specific task.' },
-  { num: '03', title: 'Review and Confirm',             body: 'We\'ll share your matched worker\'s profile, the agreed price, and the expected timeline. You review and confirm when you\'re happy. There are no surprise fees, the price you confirm is the price you pay.' },
-  { num: '04', title: 'The Work Gets Done',             body: 'Your Swiftgigs worker arrives at the agreed time and gets to work. You can stay informed via WhatsApp, workers provide progress updates as needed, and you can message them directly if anything changes.' },
-  { num: '05', title: 'Confirm and Pay',                body: 'Once the task is complete, confirm satisfaction and release payment through our secure escrow process. Then rate your experience, your honest feedback helps good workers get more opportunities and keeps quality high.' },
+  { num: '01', title: 'Message Us and Describe the Task', body: 'Message the Swiftgigs WhatsApp number and tap "Request a service". Pick a category, or just type what you need, like "my laptop screen is cracked" or "I need a cleaner in Lekki". Share your location, then describe the task in text or a voice note, with photos or videos if they help.' },
+  { num: '02', title: 'Choose a Worker Near You',         body: 'We search within 50 km of you first and show a list of nearby workers with their ratings and distance. If nobody is close, you can widen the search. Pick one and they get your request to accept or decline. If they decline, you go back to the list.' },
+  { num: '03', title: 'Agree the Price and Pay into Escrow', body: 'You suggest a price and the worker can agree, counter with their own amount (with a reason, by text or voice note), or decline. Once you both agree, you get a payment link. Your money is held in escrow, not paid to the worker yet.' },
+  { num: '04', title: 'Verify, Meet, and Get It Done',    body: 'Once your payment is in escrow, we verify any party who has not been checked yet. Then you receive the worker\'s official ID photo and contact, plus a 4-digit meeting code. The worker taps "I\'ve arrived" and enters the code, and you confirm the person at your door matches the photo.' },
+  { num: '05', title: 'Confirm, Pay, and Rate',           body: 'When the worker marks the job done, you confirm and payment is released. If you do not respond, it is released automatically after 3 hours. If something is wrong, raise a dispute instead: both sides submit evidence and a customer care agent decides. Both of you then rate each other.' },
 ];
 
 const tips = [
-  { tip: 'Be specific',        detail: 'The more detail you provide, the better your match, include location, timing, and any special requirements.' },
+  { tip: 'Be specific',        detail: 'The more detail you provide, the easier it is for a worker to accept, include timing, photos and any special requirements.' },
   { tip: 'Have everything ready', detail: 'If your task requires materials (cleaning products, tools, access codes), have them prepared before the worker arrives.' },
-  { tip: 'Stay accessible',    detail: 'Keep WhatsApp notifications on during the booking process so we can confirm details quickly.' },
+  { tip: 'Stay accessible',    detail: 'Keep WhatsApp notifications on so you see the worker\'s offer, your meeting code and the check-in messages.' },
   { tip: 'Give honest feedback', detail: 'Ratings help great workers get more work and help us maintain the quality you expect.' },
 ];
 
 export default function BlogPost3() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="min-h-screen bg-background text-foreground flex flex-col overflow-x-clip">
       <PageNav backHref="/blog" backLabel="Back to Blog" />
 
-      <div className="border-b border-border bg-muted/40">
-        <div className="max-w-3xl mx-auto px-4 py-12 md:py-16">
-          <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <span className="inline-block text-xs font-bold bg-sky-500/10 text-sky-700 rounded-full px-3 py-1 mb-5 uppercase tracking-wider">
-              Guide
-            </span>
-          </div>
-          <h1 className="animate-in fade-in slide-in-from-bottom-6 duration-700 text-3xl md:text-5xl font-display font-bold leading-tight mb-5">
-            Your First Swiftgigs Experience: What to Expect
-          </h1>
-          <div className="animate-in fade-in duration-700 [animation-delay:200ms] flex items-center gap-4 text-sm text-muted-foreground">
-            <span>Swiftgigs Team</span>
-            <span>·</span>
-            <span>Apr 15, 2025</span>
-            <span>·</span>
-            <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" />2 min read</span>
-          </div>
-        </div>
-      </div>
+      <PostHeader
+        category="Guide"
+        categoryClass="bg-sky-500/10 text-sky-700"
+        title="Your First Swiftgigs Experience: What to Expect"
+        date="May 4, 2026"
+        readTime="2 min read"
+      />
 
-      <article className="flex-1 max-w-3xl mx-auto px-4 py-12 w-full">
-        <AnimateIn variant="fade-up">
-          <PostBanner variant="chat" className="mb-10" />
-        </AnimateIn>
-        <div className="space-y-6 text-[1.0625rem] leading-[1.75] text-foreground/90">
+      <PostDeck>
+      <article className="max-w-2xl mx-auto px-4 sm:px-6 pt-10 md:pt-14 pb-14 w-full">
+        <div className="space-y-6 text-[1.0625rem] leading-[1.8] text-foreground/80 [&>div:first-child_p]:text-xl [&>div:first-child_p]:leading-relaxed [&>div:first-child_p]:text-foreground/90">
           <AnimateIn variant="fade-up">
             <p>
-              Getting started with Swiftgigs takes less than 60 seconds, and your first task can often be
-              assigned within minutes. Here&apos;s exactly what happens from your first WhatsApp message to
-              a completed task, with no surprises along the way.
+              You can start a request on Swiftgigs in about a minute, entirely inside WhatsApp. Here&apos;s exactly
+              what happens from your first message to a completed task, with no surprises along the way.
             </p>
           </AnimateIn>
 
-          <div className="space-y-8 pt-4">
-            {steps.map((step, i) => (
-              <AnimateIn key={step.num} variant="fade-up" delay={i * 80}>
-                <div className="flex gap-5">
-                  <div className="shrink-0 w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-xs font-display font-bold text-primary">
-                    {step.num}
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-display font-bold mb-2">{step.title}</h2>
-                    <p className="text-muted-foreground leading-relaxed">{step.body}</p>
-                  </div>
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
+          <NumberedList items={steps} />
 
           <AnimateIn variant="fade-up">
             <StoryCard
@@ -128,26 +99,36 @@ export default function BlogPost3() {
 
           <AnimateIn variant="fade-up">
             <h2 className="text-2xl font-display font-bold mt-10 mb-4">Tips for the Best Experience</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <ul className="border-t border-border">
               {tips.map((item) => (
-                <div key={item.tip} className="bg-card border border-border rounded-xl p-4 flex gap-3">
+                <li key={item.tip} className="flex gap-3 py-4 border-b border-border">
                   <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold text-sm mb-0.5">{item.tip}</p>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{item.detail}</p>
-                  </div>
-                </div>
+                  <p className="text-[15px] leading-relaxed text-foreground/65">
+                    <span className="font-semibold text-foreground">{item.tip}.</span> {item.detail}
+                  </p>
+                </li>
               ))}
-            </div>
+            </ul>
+          </AnimateIn>
+
+          <AnimateIn variant="fade-up">
+            <h2 className="text-2xl font-display font-bold mt-10 mb-3">Looking for local gigs instead?</h2>
+            <p>
+              Swiftgigs works for workers too. If you search for local gigs or odd jobs around you, join the
+              waitlist and we will message you when worker onboarding opens. You register in WhatsApp with your
+              name, location, service and payout bank account. Your NIN is checked against that account name before
+              your first job, and customers then choose you from the nearby list, with payment held in escrow.
+            </p>
           </AnimateIn>
 
           <AnimateIn variant="fade-up">
             <div className="bg-card border border-border rounded-2xl p-6 mt-8">
               <h3 className="text-lg font-display font-bold mb-3">What If Something Goes Wrong?</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                We&apos;re here. Message our support team immediately via WhatsApp and we&apos;ll investigate
-                and resolve the issue. Our escrow payment system means your money is fully protected until
-                you confirm you&apos;re satisfied, so you never pay for work that wasn&apos;t completed properly.
+                Raise a dispute from the job in WhatsApp. You and the worker each submit your side (text,
+                photos, video or voice notes), then a customer care agent reviews both and decides to release
+                payment to the worker, return it to you, or split it. Your money stays in escrow until then.
+                Note that Swiftgigs&apos; 10% commission also applies to refunds.
               </p>
             </div>
           </AnimateIn>
@@ -155,7 +136,7 @@ export default function BlogPost3() {
           <AnimateIn variant="zoom-in">
             <div className="final-cta-card text-white rounded-3xl p-8 mt-6 text-center">
               <p className="text-lg font-bold mb-2">Ready to try Swiftgigs?</p>
-              <p className="text-white/70 text-sm mb-5">Your first task could be done before you finish your next cup of tea.</p>
+              <p className="text-white/70 text-sm mb-5">Describe your task once and pick a verified worker near you.</p>
               <a href="/waitlist"
                 className="inline-flex items-center gap-2 bg-white text-primary hover:bg-white/90 font-bold rounded-full px-6 py-3 text-sm transition-colors">
                 <WhatsAppIcon className="w-4 h-4" />
@@ -166,28 +147,8 @@ export default function BlogPost3() {
         </div>
       </article>
 
-      <section className="border-t border-border py-10 px-4">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-5">More from the Blog</p>
-          <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/blog/making-help-accessible-in-nigeria" className="group bg-card border border-border rounded-xl p-5 hover:border-primary/40 transition flex flex-col gap-2">
-              <span className="text-xs font-bold bg-primary/10 text-primary rounded-full px-2.5 py-0.5 self-start">Company</span>
-              <p className="font-semibold text-sm leading-snug group-hover:text-primary transition">How Swiftgigs Is Making Everyday Help More Accessible in Nigeria</p>
-              <span className="text-xs text-muted-foreground flex items-center gap-1 mt-auto"><Clock className="w-3 h-3" /> 3 min read</span>
-            </Link>
-            <Link href="/blog/tasks-to-delegate" className="group bg-card border border-border rounded-xl p-5 hover:border-primary/40 transition flex flex-col gap-2">
-              <span className="text-xs font-bold bg-emerald-500/10 text-emerald-700 rounded-full px-2.5 py-0.5 self-start">Productivity</span>
-              <p className="font-semibold text-sm leading-snug group-hover:text-primary transition">5 Everyday Tasks You Should Stop Doing Yourself</p>
-              <span className="text-xs text-muted-foreground flex items-center gap-1 mt-auto"><Clock className="w-3 h-3" /> 4 min read</span>
-            </Link>
-          </div>
-          <div className="mt-6">
-            <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 transition group">
-              View all articles <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <MoreFromBlog current="getting-started-with-swiftgigs" />
+      </PostDeck>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <PageFooter />

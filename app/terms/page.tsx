@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: false },
 };
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
+import { WHATSAPP_LINK, WHATSAPP_DISPLAY } from '@/lib/site-config';
 import { CheckCircle, Shield, CreditCard, Ban, Scale, Mail, Users, Briefcase, Lock, FileText, AlertTriangle, RefreshCw, Globe, UserCheck } from 'lucide-react';
 
 type Section = {
@@ -74,19 +75,19 @@ const sections: Section[] = [
     bullets: [
       'Payment terms and amounts are agreed between the Customer and Worker before a task begins',
       'Swiftgigs may hold customer funds in escrow until task completion is confirmed',
-      'A service fee or platform commission may be deducted from worker earnings, current rates are disclosed at booking',
-      'Workers receive payment after successful task completion and customer confirmation',
+      'Swiftgigs deducts a platform commission of 10% from worker payouts, capped at ₦10,000 per job. The same commission applies to refunds, so a refund is not the full escrowed amount',
+      'Workers receive payment after the customer confirms the job, or automatically after 3 hours if the customer does not respond',
       'Swiftgigs reserves the right to adjust its fee structure with advance notice to users',
-      'Disputed payments will be held in escrow until a resolution is formally reached',
+      'Disputed payments will be held in escrow until a customer care agent decides to release the payment, return it, or split it',
     ],
   },
   {
     num: '07', icon: RefreshCw, title: 'Cancellation & Refund Policy',
     bullets: [
       'Either party may cancel a booked task before it formally commences',
-      'Cancellations made less than 30 minutes before a scheduled start time may attract a cancellation fee',
+      'An active job can be cancelled from the job menu in WhatsApp',
       'Workers who cancel without valid cause may have their account flagged or temporarily suspended',
-      'Refunds for pre-paid tasks will be processed within 3–5 business days of approval',
+      'Approved refunds are returned to the original payment method, less the platform commission described above',
       'Swiftgigs determines refund eligibility at its reasonable discretion based on available evidence',
     ],
   },
@@ -163,7 +164,7 @@ export default function TermsPage() {
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-[3.2rem] font-display font-bold tracking-[-0.015em] leading-[1.08] mb-5">Terms & Conditions</h1>
           <div className="flex flex-wrap gap-2 text-[12.5px] font-medium text-foreground/65">
-            <span className="rounded-full border border-border bg-card px-3.5 py-1.5">Effective: January 2025</span>
+            <span className="rounded-full border border-border bg-card px-3.5 py-1.5">Effective: October 2026</span>
                         <span className="rounded-full border border-border bg-card px-3.5 py-1.5">Last Updated: May 2026</span>
                         <span className="rounded-full border border-border bg-card px-3.5 py-1.5">Version 2.0</span>
           </div>
@@ -218,7 +219,7 @@ export default function TermsPage() {
                   {section.isContact && (
                     <div className="grid sm:grid-cols-2 gap-4 pt-1">
                       <a
-                        href="/waitlist"
+                        href={WHATSAPP_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 bg-card border border-border rounded-xl p-4 hover:border-primary/40 transition group"
@@ -226,7 +227,7 @@ export default function TermsPage() {
                         <WhatsAppIcon className="w-5 h-5 text-primary shrink-0" />
                         <div>
                           <p className="text-sm font-semibold group-hover:text-primary transition">WhatsApp Support</p>
-                          <p className="text-xs text-muted-foreground">Fastest response time</p>
+                          <p className="text-xs text-muted-foreground">{WHATSAPP_DISPLAY} · Fastest response time</p>
                         </div>
                       </a>
                       <a

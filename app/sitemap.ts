@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next';
 const BASE = 'https://swiftgigs.com.ng';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  const lastModified = new Date('2026-10-31');
 
   return [
     { url: `${BASE}/`,          lastModified, changeFrequency: 'weekly',  priority: 1.0 },

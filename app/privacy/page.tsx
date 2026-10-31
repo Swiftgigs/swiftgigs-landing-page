@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: false },
 };
 import { WhatsAppIcon } from '@/components/whatsapp-icon';
+import { WHATSAPP_LINK, WHATSAPP_DISPLAY } from '@/lib/site-config';
 import { CheckCircle, Shield, Database, Share2, Lock, Clock, UserCheck, Cookie, Smartphone, ExternalLink, Baby, Globe, RefreshCw, Mail } from 'lucide-react';
 
 type Section = {
@@ -35,13 +36,15 @@ const sections: Section[] = [
     num: '02', icon: Database, title: 'Information We Collect',
     body: 'We collect information necessary to provide and improve our services:',
     bullets: [
-      'Identity data: Full name, phone number, and profile photo',
+      'Identity data: Full name, phone number, and NIN. Your NIN is stored as a one-way hash, with the raw number encrypted only until the identity check runs',
       'Contact data: WhatsApp number, email address, and physical address',
-      'Location data: Approximate or precise location for worker-matching purposes',
+      'Location data: The location you share, used to find workers near you and to share with your matched worker',
       'Transaction data: Payment amounts, task details, and transaction history',
       'Communication data: Messages exchanged through our WhatsApp platform or support channels',
-      'Device data: IP address, browser type, device identifiers, and app usage data',
-      'Verification data: Government-issued ID and background check documents (Workers only)',
+      'Device data: IP address, browser type and device identifiers, collected when you use this website',
+      'Verification data: The name and photo returned by the NIN lookup (Workers; the official record photo is shown to customers), and bank account details for payouts (Workers)',
+      'Safety data: Optional emergency contact, meeting code attempts and door-check responses',
+      'Media: Photos, videos and voice notes you send to describe a task or support a dispute',
     ],
   },
   {
@@ -58,7 +61,7 @@ const sections: Section[] = [
   {
     num: '04', icon: CheckCircle, title: 'How We Use Your Data',
     bullets: [
-      'To match customers with suitable verified workers for requested tasks',
+      'To show customers verified workers near them for requested tasks',
       'To communicate task updates, confirmations, and support messages',
       'To process payments and maintain accurate transaction records',
       'To prevent fraud, resolve disputes, and maintain platform safety',
@@ -163,7 +166,7 @@ export default function PrivacyPage() {
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-[3.2rem] font-display font-bold tracking-[-0.015em] leading-[1.08] mb-5">Privacy Policy</h1>
           <div className="flex flex-wrap gap-2 text-[12.5px] font-medium text-foreground/65">
-            <span className="rounded-full border border-border bg-card px-3.5 py-1.5">Effective: January 2025</span>
+            <span className="rounded-full border border-border bg-card px-3.5 py-1.5">Effective: October 2026</span>
                         <span className="rounded-full border border-border bg-card px-3.5 py-1.5">Last Updated: May 2026</span>
           </div>
           <p className="text-sm text-muted-foreground">
@@ -221,7 +224,7 @@ export default function PrivacyPage() {
                   {section.isContact && (
                     <div className="grid sm:grid-cols-2 gap-4 pt-1">
                       <a
-                        href="/waitlist"
+                        href={WHATSAPP_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 bg-card border border-border rounded-xl p-4 hover:border-primary/40 transition group"
@@ -229,7 +232,7 @@ export default function PrivacyPage() {
                         <WhatsAppIcon className="w-5 h-5 text-primary shrink-0" />
                         <div>
                           <p className="text-sm font-semibold group-hover:text-primary transition">WhatsApp Support</p>
-                          <p className="text-xs text-muted-foreground">Fastest response time</p>
+                          <p className="text-xs text-muted-foreground">{WHATSAPP_DISPLAY} · Fastest response time</p>
                         </div>
                       </a>
                       <a

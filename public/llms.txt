@@ -1,8 +1,8 @@
 # Swiftgigs
 
-> Swiftgigs is a WhatsApp-based platform that connects people across Nigeria with vetted local workers for everyday tasks like house cleaning, errands, deliveries, quick repairs, beauty services and moving help. There is no app to download: customers send one WhatsApp message, get matched with a verified nearby worker in minutes, and pay through an escrow that is only released when they confirm the job is done. Prices start from ₦1,000 and are negotiated with the provider through Swiftgigs before work begins.
+> Swiftgigs is a WhatsApp-based platform that connects people across Nigeria with identity-verified local workers across 15 service categories, including cleaning, errands, home and appliance repairs, food orders, beauty, laundry, moving and delivery. There is no app to download: customers send one WhatsApp message, choose a verified worker nearby, agree the price in the chat, and pay through an escrow that is released when they confirm the job is done (or automatically after 3 hours if they do not respond). Disputes are reviewed by a customer care agent. Swiftgigs takes a 10% commission, capped at ₦10,000, from worker payouts.
 
-Swiftgigs is currently pre-launch: worker onboarding and customer requests open soon, and a public waitlist is live. A closed beta with 20 testers has been completed, covering the full request, match and escrow flow. Beta feedback drove a key change: NIN-based identity verification is being added to worker onboarding before public launch. Swiftgigs Technologies LTD is a CAC-registered Nigerian business.
+Swiftgigs is currently pre-launch: worker onboarding and customer requests open soon, and a public waitlist is live. A closed beta with 20 testers has been completed, covering the full request, match and escrow flow. Beta feedback drove a key change: NIN-based identity verification, matched against the worker's payout bank account name, is now built in and runs at a worker's first job. Swiftgigs Technologies LTD is a CAC-registered Nigerian business.
 
 ## Key pages
 
@@ -25,4 +25,5 @@ Swiftgigs is currently pre-launch: worker onboarding and customer requests open 
 ## Contact
 
 - Waitlist: https://swiftgigs.com.ng/waitlist
+- WhatsApp: +234 814 273 6424 (https://wa.me/2348142736424)
 - Email: support@swiftgigs.com.ng

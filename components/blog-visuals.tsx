@@ -38,15 +38,15 @@ function CityScene({ compact }: { compact?: boolean }) {
         <span className={`rounded-full bg-[#25D366] text-white font-bold flex items-center justify-center ${compact ? 'w-6 h-6 text-[10px]' : 'w-9 h-9 text-[13px]'}`}>A</span>
         <span>
           <span className={`flex items-center gap-1 font-semibold ${compact ? 'text-[10px]' : 'text-[13px]'}`}>
-            Amaka matched <BadgeCheck className={`${compact ? 'w-3 h-3' : 'w-4 h-4'} fill-[#25D366] text-white`} />
+            Amaka O. · Cleaner <BadgeCheck className={`${compact ? 'w-3 h-3' : 'w-4 h-4'} fill-[#25D366] text-white`} />
           </span>
-          {!compact && <span className="block text-[10.5px] text-zinc-500">6 minutes · 1.2km away</span>}
+          {!compact && <span className="block text-[10.5px] text-zinc-500">Identity verified · 1.2km away</span>}
         </span>
       </div>
 
       {!compact && (
         <span className="absolute right-[10%] top-[14%] inline-flex items-center gap-1.5 bg-white/15 border border-white/20 backdrop-blur rounded-full px-3 py-1.5 text-[11px] font-semibold text-white">
-          <MapPin className="w-3 h-3" /> Nationwide 🇳🇬
+          <MapPin className="w-3 h-3" /> Lekki, Lagos 🇳🇬
         </span>
       )}
     </>
@@ -102,7 +102,7 @@ function ChatScene({ compact }: { compact?: boolean }) {
       </div>
       {!compact && (
         <span className="absolute right-[7%] top-[12%] inline-flex items-center gap-1.5 bg-white/15 border border-white/20 backdrop-blur rounded-full px-3 py-1.5 text-[11px] font-semibold text-white">
-          <Clock className="w-3 h-3" /> Under 60 seconds
+          <Clock className="w-3 h-3" /> One chat, no app
         </span>
       )}
     </>
